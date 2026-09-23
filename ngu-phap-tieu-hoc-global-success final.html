@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ngữ Pháp Tiếng Anh Tiểu Học 1–5 (Global Success) — Bài Học &amp; Bài Tập</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #141922;
+    --panel: #1c2330;
+    --panel-2: #202836;
+    --panel-3: #232c3c;
+    --line: #2c3444;
+    --text: #E8ECF1;
+    --text-dim: #8B95A7;
+    --s: #5B8DEF;
+    --s-bg: rgba(91,141,239,0.14);
+    --v: #E8A33D;
+    --v-bg: rgba(232,163,61,0.14);
+    --aux: #9B8AE6;
+    --aux-bg: rgba(155,138,230,0.14);
+    --o: #4CAF7D;
+    --o-bg: rgba(76,175,125,0.14);
+    --be: #E86A92;
+    --be-bg: rgba(232,106,146,0.14);
+    --accent: #E8A33D;
+    --good: #4CAF7D;
+    --mid: #E8A33D;
+    --bad: #E86A92;
+    --radius: 10px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background: radial-gradient(circle at 15% 0%, #1a2130 0%, var(--bg) 55%);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    min-height:100vh;
+    padding: 24px 18px 60px;
+  }
+  .wrap{ max-width: 1240px; margin: 0 auto; }
+  header{ margin-bottom: 16px; }
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 8px;
+  }
+  h1{
+    font-family:'Space Grotesk', sans-serif;
+    font-size: clamp(22px, 4vw, 32px);
+    margin: 0 0 6px; font-weight: 700; letter-spacing: -0.01em;
+  }
+  .sub{ color: var(--text-dim); font-size: 14px; max-width: 760px; line-height:1.5;}
+
+  .top-controls{
+    display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
+    margin: 18px 0 20px;
+  }
+  .tabs{ display:flex; gap:8px; background: var(--panel-2); border:1px solid var(--line); border-radius: 12px; padding:4px; }
+  .tab-btn{
+    font-family:'Space Grotesk', sans-serif; font-weight:700; font-size: 13.5px;
+    padding: 9px 18px; border-radius: 9px; cursor:pointer; color: var(--text-dim);
+    border:none; background:transparent; transition: all .2s ease;
+  }
+  .tab-btn.active{ background: rgba(232,163,61,.16); color: var(--accent); }
+  .grades{ display:flex; gap:8px; flex-wrap:wrap; }
+  .grade-btn{
+    font-family:'JetBrains Mono', monospace; font-weight:600; font-size: 12.5px;
+    padding: 9px 16px; border-radius: 10px; cursor:pointer;
+    background: var(--panel-2); border:1px solid var(--line); color: var(--text-dim);
+    transition: all .2s ease; position:relative;
+  }
+  .grade-btn:hover{ border-color: rgba(232,163,61,.4); color:var(--text); }
+  .grade-btn.active{ background: rgba(232,163,61,.16); border-color: var(--accent); color: var(--accent); }
+
+  .layout{
+    display:grid;
+    grid-template-columns: 1.55fr 1fr;
+    gap: 20px;
+    align-items:start;
+  }
+  @media (max-width: 860px){ .layout{ grid-template-columns: 1fr; } }
+
+  .stage{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px 24px 20px;
+    min-height: 420px;
+    position: relative;
+  }
+
+  .placeholder{
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; min-height: 360px; color: var(--text-dim); gap:10px;
+  }
+  .placeholder .big{ font-size: 32px; }
+  .placeholder .t1{ font-family:'Space Grotesk', sans-serif; color: var(--text); font-size:16px; font-weight:700; }
+  .placeholder .t2{ font-size: 13px; max-width: 360px; }
+
+  .tag{
+    display:inline-block; padding: 3px 9px; border-radius: 999px;
+    font-size: 11px; letter-spacing:.04em; border:1px solid var(--line);
+    color: var(--text-dim); font-family:'JetBrains Mono', monospace;
+  }
+
+  .lesson-head{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;
+    margin-bottom: 14px;
+  }
+  .lesson-name{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size: 18px; }
+  .lesson-vi{ color: var(--text-dim); font-size: 13px; margin-top:2px; }
+  .lesson-usage{
+    font-size: 13.5px; color: var(--text-dim); line-height:1.6; margin: 10px 0 16px;
+    background: var(--panel-2); border:1px solid var(--line); border-radius: var(--radius);
+    padding: 12px 14px;
+  }
+  .lesson-usage b{ color: var(--text); }
+  .struct-block{ margin-bottom: 14px; }
+  .struct-label{
+    font-family:'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing:.08em;
+    text-transform:uppercase; color: var(--text-dim); margin-bottom: 8px;
+  }
+  .struct-row{
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    background: var(--panel-2); border:1px solid var(--line); border-radius: 8px;
+    padding: 9px 12px; margin-bottom:6px; font-size: 12.5px;
+  }
+  .struct-row .k{ color: var(--text-dim); min-width: 130px; }
+  .struct-row .f{ font-family:'JetBrains Mono', monospace; color: var(--accent); font-weight:600; }
+  .lesson-example{
+    background: linear-gradient(135deg, rgba(232,163,61,.08), rgba(91,141,239,.06));
+    border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 15px; margin-bottom: 8px;
+  }
+  .lesson-example .en{ font-size: 14.5px; font-weight:600; }
+  .lesson-example .vi{ font-size: 12.5px; color: var(--text-dim); margin-top:3px; }
+  .lesson-signals{ display:flex; flex-wrap:wrap; gap: 8px; margin: 12px 0; }
+  .lesson-signals .pill{
+    font-size: 12px; padding: 5px 10px; border-radius: 999px;
+    background: var(--panel-2); border:1px solid var(--line); color: var(--text-dim);
+  }
+  .lesson-note{
+    background: var(--panel-2); border:1px solid var(--line); border-left:3px solid var(--v);
+    border-radius: var(--radius); padding: 12px 14px; font-size: 12.5px; color: var(--text-dim); line-height:1.6;
+  }
+  .lesson-note b{ color: var(--text); }
+  .section-tiny-title{
+    font-family:'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing:.08em;
+    text-transform:uppercase; color: var(--text-dim); margin: 14px 0 8px;
+  }
+
+  .picker{ background: var(--panel); border: 1px solid var(--line); border-radius: 16px; overflow:hidden; }
+  .picker-head{ display:flex; align-items:center; justify-content:space-between; padding: 16px 18px; }
+  .picker-head .t{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; gap:9px; }
+  .picker-head .t .dot{ width:8px; height:8px; border-radius:50%; background: var(--accent); }
+  .picker-body{ max-height: 620px; overflow-y:auto; padding: 4px 14px 16px; }
+  .picker-body::-webkit-scrollbar{ width:6px; }
+  .picker-body::-webkit-scrollbar-thumb{ background: var(--line); border-radius:6px; }
+  .unit-group{ margin-bottom: 10px; }
+  .unit-label{
+    font-family:'JetBrains Mono', monospace; font-size: 10.5px; color: var(--text-dim);
+    letter-spacing:.06em; text-transform:uppercase; padding: 8px 4px 6px; display:flex; justify-content:space-between;
+  }
+  .topic-btn{
+    width:100%; text-align:left; display:flex; align-items:center; gap:10px;
+    background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px; color: var(--text);
+    padding: 10px 12px; font-size: 12.5px; cursor:pointer; margin-bottom: 6px;
+    transition: border-color .2s ease, background .2s ease, transform .15s ease;
+  }
+  .topic-btn:hover{ border-color: rgba(232,163,61,.4); transform: translateX(2px); }
+  .topic-btn.active{ background: rgba(232,163,61,.16); border-color: var(--accent); color: var(--accent); font-weight:600; }
+  .topic-btn .num{ font-family:'JetBrains Mono', monospace; font-size: 10.5px; color: var(--text-dim); flex:none; width:20px; }
+  .topic-btn.active .num{ color: var(--accent); }
+  .topic-check{
+    width:16px; height:16px; flex:none; accent-color: var(--accent); cursor:pointer;
+  }
+
+  .quiz-config{ padding: 10px 18px 6px; border-top: 1px solid var(--line); }
+  .config-row{ display:flex; align-items:center; justify-content:space-between; gap:10px; margin: 8px 0; flex-wrap:wrap; }
+  .config-label{ font-family:'JetBrains Mono', monospace; font-size: 11.5px; color: var(--text-dim); }
+  .count-btns{ display:flex; gap:6px; }
+  .cbtn{
+    font-family:'JetBrains Mono', monospace; font-size: 12px; font-weight:600; cursor:pointer;
+    background: var(--panel-2); border: 1px solid var(--line); border-radius: 8px;
+    color: var(--text-dim); padding: 7px 13px;
+    transition: border-color .2s ease, color .2s ease, background .2s ease;
+  }
+  .cbtn:hover{ color: var(--text); border-color: var(--accent); }
+  .cbtn.active{ background: rgba(232,163,61,.16); border-color: var(--accent); color: var(--accent); }
+  .select-all-row{ display:flex; gap:8px; padding: 6px 4px 4px; }
+  .link-btn{
+    font-family:'JetBrains Mono', monospace; font-size: 11px; color: var(--s); cursor:pointer; background:none; border:none; padding:0;
+  }
+  .link-btn:hover{ text-decoration: underline; }
+  .start-row{ padding: 14px 18px 18px; }
+  .btn{
+    font-family:'JetBrains Mono', monospace; font-size: 12.5px; cursor:pointer;
+    border-radius: 8px; padding: 10px 16px; border: 1px solid var(--line);
+    transition: border-color .2s ease, color .2s ease, background .2s ease;
+    background: var(--panel-2); color: var(--text-dim);
+  }
+  .btn-ghost{ background: var(--panel-2); color: var(--text-dim); }
+  .btn-ghost:hover{ color: var(--text); border-color: var(--accent); }
+  .btn-primary{ background: rgba(232,163,61,.16); color: var(--accent); border-color: var(--accent); font-weight:600; width:100%; }
+  .btn-primary:hover{ background: rgba(232,163,61,.24); }
+  .btn:disabled{ opacity:.45; cursor:not-allowed; }
+
+  .quiz-toolbar{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--line);
+  }
+  .quiz-toolbar .title{ font-family:'Space Grotesk', sans-serif; font-weight:700; font-size: 16px; }
+  .quiz-toolbar .count-tag{ font-family:'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); }
+  .qlist{ display:flex; flex-direction:column; gap: 12px; }
+  .qrow{
+    background: var(--panel-2); border:1px solid var(--line); border-radius: var(--radius);
+    padding: 14px 16px; transition: border-color .2s ease, background .2s ease;
+  }
+  .qrow.correct{ border-color: rgba(76,175,125,.5); background: rgba(76,175,125,.07); }
+  .qrow.wrong{ border-color: rgba(232,106,146,.5); background: rgba(232,106,146,.06); }
+  .qmeta{ display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .qnum{ font-family:'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); }
+  .lvl-tag{ font-family:'JetBrains Mono', monospace; font-size:9.5px; padding:2px 7px; border-radius:999px; letter-spacing:.04em; }
+  .lvl-tag.basic{ background: var(--o-bg); color: var(--o); }
+  .lvl-tag.advanced{ background: var(--s-bg); color: var(--s); }
+  .lvl-tag.thinking{ background: var(--v-bg); color: var(--v); }
+  .qtype-tag{ font-family:'JetBrains Mono', monospace; font-size:9.5px; padding:2px 7px; border-radius:999px; letter-spacing:.03em; border:1px solid var(--line); color: var(--text-dim); }
+  .qtype-tag.mcq{ background: var(--aux-bg); color: var(--aux); border-color: transparent; }
+  .qtype-tag.fill{ background: var(--s-bg); color: var(--s); border-color: transparent; }
+  .qtype-tag.error{ background: rgba(232,106,146,.14); color: var(--be); border-color: transparent; }
+  .qtype-tag.reorder{ background: var(--o-bg); color: var(--o); border-color: transparent; }
+  .qprompt{ font-size: 14.5px; line-height:1.6; margin-bottom: 10px; }
+  .qprompt b.blank-hint{ color: var(--accent); font-weight:600; }
+
+  .qoptions{ display:flex; flex-direction:column; gap:7px; }
+  .qopt{
+    display:flex; align-items:center; gap:9px; font-size: 13.5px;
+    background: var(--panel-3); border:1px solid var(--line); border-radius: 8px;
+    padding: 8px 11px; cursor:pointer; transition: border-color .15s ease;
+  }
+  .qopt:hover{ border-color: rgba(91,141,239,.4); }
+  .qopt input{ accent-color: var(--accent); cursor:pointer; }
+  .qrow.graded .qopt{ pointer-events:none; }
+  .qopt.opt-correct{ border-color: var(--good); color: var(--good); }
+  .qopt.opt-wrong{ border-color: var(--bad); color: var(--bad); }
+
+  .qfill-row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .qfill-input{
+    flex: 1 1 220px; min-width: 160px;
+    font-family:'JetBrains Mono', monospace; font-size: 14px;
+    background: var(--panel-3); border:1.5px solid var(--line); border-radius: 8px;
+    padding: 9px 12px; color: var(--text); outline:none;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .qfill-input:focus{ border-color: var(--s); }
+  .qfill-input::placeholder{ color: var(--text-dim); opacity:.7; }
+  .qrow.graded .qfill-input{ pointer-events:none; }
+  .qrow.correct .qfill-input{ border-color: var(--good); color: var(--good); background: rgba(76,175,125,.08); }
+  .qrow.wrong .qfill-input{ border-color: var(--bad); color: var(--bad); background: rgba(232,106,146,.08); }
+  .qfill-verdict{ font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:700; white-space:nowrap; }
+  .qrow.correct .qfill-verdict{ color: var(--good); }
+  .qrow.wrong .qfill-verdict{ color: var(--bad); }
+  .qanswer-reveal{ display:none; font-size:12.5px; color: var(--text-dim); margin-top:6px; }
+  .qrow.wrong .qanswer-reveal{ display:block; }
+  .qanswer-reveal b{ color: var(--good); }
+
+  .qexplain{
+    margin-top: 10px; padding-top:9px; border-top: 1px dashed var(--line);
+    font-size: 12.5px; color: var(--text-dim); line-height:1.55; display:none;
+  }
+  .qexplain b{ color: var(--text); }
+  .qrow.graded .qexplain{ display:block; }
+
+  .score-bar{
+    display:none; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    margin-top: 16px; padding: 14px 16px; border-radius: var(--radius); border:1px solid var(--line);
+    font-family:'JetBrains Mono', monospace; font-size: 13px;
+  }
+  .score-bar.good{ background: rgba(76,175,125,.1); border-color: rgba(76,175,125,.4); color: var(--good); }
+  .score-bar.mid{ background: rgba(232,163,61,.1); border-color: rgba(232,163,61,.4); color: var(--accent); }
+  .score-bar.low{ background: rgba(232,106,146,.1); border-color: rgba(232,106,146,.4); color: var(--bad); }
+
+  .export-row{
+    display:flex; align-items:center; justify-content:flex-end; gap:8px; flex-wrap:wrap;
+    margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--line);
+  }
+  .export-row .title{
+    font-family:'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing:.06em;
+    text-transform:uppercase; color: var(--text-dim); margin-right:auto;
+  }
+  .copy-flash{ color: var(--good) !important; border-color: var(--good) !important; }
+
+  .hidden{ display:none !important; }
+  footer {
+    position: fixed; bottom: 0; left: 0; width: 100%;
+    text-align: center; padding: 10px;
+    background: rgba(20,25,34,0.95); color: #8B95A7; font-size: 12px;
+    border-top: 1px solid var(--line);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Ngữ pháp tiếng Anh · Lớp 1 – 5 · Global Success</p>
+    <h1>Bài Học &amp; Bài Tập Ngữ Pháp Tiểu Học</h1>
+    <p class="sub">Tổng hợp chủ điểm ngữ pháp + mẫu câu theo chương trình Global Success lớp 1–5. Chọn khối lớp, xem lý thuyết chi tiết, hoặc luyện tập với 4 dạng bài <b>trắc nghiệm · điền khuyết · sửa lỗi sai · sắp xếp câu</b>.</p>
+  </header>
+
+  <div class="top-controls">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="lesson">📖 Bài học</button>
+      <button class="tab-btn" data-tab="exercise">✍️ Bài tập</button>
+    </div>
+    <div class="grades" id="gradeRow">
+      <button class="grade-btn active" data-grade="1">Lớp 1</button>
+      <button class="grade-btn" data-grade="2">Lớp 2</button>
+      <button class="grade-btn" data-grade="3">Lớp 3</button>
+      <button class="grade-btn" data-grade="4">Lớp 4</button>
+      <button class="grade-btn" data-grade="5">Lớp 5</button>
+    </div>
+  </div>
+
+  <!-- TAB BÀI HỌC -->
+  <div id="tabLesson" class="tab-panel">
+    <div class="layout">
+      <div class="stage" id="lessonStage">
+        <div class="placeholder" id="lessonPlaceholder">
+          <div class="big">📘</div>
+          <div class="t1">Chọn một chủ điểm ở khung bên phải</div>
+          <div class="t2" id="lessonPlaceholderText">Các chủ điểm ngữ pháp lớp 1 theo Global Success. Nội dung gồm công thức, ví dụ minh hoạ và mẹo tránh lỗi sai.</div>
+        </div>
+        <div id="lessonBody" style="display:none;"></div>
+      </div>
+
+      <div class="picker">
+        <div class="picker-head">
+          <span class="t"><span class="dot"></span><span id="lessonPickerTitle">CHỦ ĐIỂM — LỚP 1</span></span>
+          <span class="tag" id="lessonCountTag">0/0</span>
+        </div>
+        <div class="picker-body" id="lessonPickerBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB BÀI TẬP -->
+  <div id="tabExercise" class="tab-panel hidden">
+    <div class="layout">
+      <div class="stage" id="exerciseStage">
+        <div class="placeholder" id="exercisePlaceholder">
+          <div class="big">✍️</div>
+          <div class="t1">Chọn chủ điểm và số câu ở khung bên phải</div>
+          <div class="t2">Có thể chọn 1 hoặc trộn nhiều chủ điểm. Đề bài trộn 4 dạng: <b>trắc nghiệm · điền khuyết · sửa lỗi sai · sắp xếp câu</b>.</div>
+        </div>
+        <div id="quizArea" style="display:none;">
+          <div class="quiz-toolbar">
+            <div>
+              <div class="title" id="quizTitle">Bài luyện tập</div>
+              <div class="count-tag" id="quizSubTitle"></div>
+            </div>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-ghost" id="reshuffleBtn">🔀 Đổi câu hỏi khác</button>
+              <button class="btn btn-primary" id="checkBtn" style="width:auto;">✓ Kiểm tra đáp án</button>
+            </div>
+          </div>
+          <div class="qlist" id="qlist"></div>
+          <div class="score-bar" id="scoreBar"></div>
+          <div class="export-row">
+            <span class="title">Xuất bài luyện tập</span>
+            <button class="btn btn-ghost" id="copyBtn">📋 Copy đề bài</button>
+            <button class="btn btn-ghost" id="exportWordBtn">📄 Xuất Word (.doc)</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="picker">
+        <div class="picker-head">
+          <span class="t"><span class="dot"></span>CHỌN CHỦ ĐIỂM</span>
+          <span class="tag" id="exSelectedTag">0 đã chọn</span>
+        </div>
+        <div class="select-all-row">
+          <button class="link-btn" id="selectAllBtn">Chọn tất cả</button>
+          <span style="color:var(--line)">|</span>
+          <button class="link-btn" id="clearAllBtn">Bỏ chọn hết</button>
+        </div>
+        <div class="picker-body" id="exercisePickerBody" style="max-height:380px;"></div>
+        <div class="quiz-config">
+          <div class="config-row">
+            <span class="config-label">SỐ CÂU</span>
+            <div class="count-btns" id="countBtns">
+              <button class="cbtn active" data-count="10">10</button>
+              <button class="cbtn" data-count="15">15</button>
+              <button class="cbtn" data-count="20">20</button>
+            </div>
+          </div>
+        </div>
+        <div class="start-row">
+          <button class="btn btn-primary" id="startBtn" disabled>Bắt đầu luyện tập</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 · Ngữ pháp Tiếng Anh tiểu học Global Success (Lớp 1–5) · Dựa trên cấu trúc bài học & bài tập tương tự cấp THCS
+</footer>
+
+<script>
+/* ================= DATA LỚP 1–5 ================= */
+
+const GRADE1_TOPICS = [
+  { id:'g1t01', unit:1, unitName:'Hello', title:'Greetings & Introductions', vi:'Chào hỏi & Giới thiệu bản thân',
+    usage:'Dùng để chào hỏi khi gặp mặt, giới thiệu tên và tạm biệt.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Chào hỏi', f:'Hi / Hello, I’m + tên.' },
+      { k:'Hỏi thăm', f:'How are you? → Fine, thank you.' },
+      { k:'Tạm biệt', f:'Bye / Goodbye.' } ] } ],
+    examples:[
+      { en:'Hi, I’m Mai.', vi:'Xin chào, mình là Mai.' },
+      { en:'Hello, I’m Bill. How are you? — Fine, thank you.', vi:'Xin chào, mình là Bill. Bạn khỏe không? — Khỏe, cảm ơn.' } ],
+    signals:['Hi','Hello','Bye','Goodbye','How are you?'],
+    note:'“Hi” thân mật hơn “Hello”. Luôn đáp lại lời chào bằng tên hoặc “Fine, thank you”.' },
+
+  { id:'g1t02', unit:2, unitName:'This is / That is', title:'This is / That is', vi:'Chỉ đồ vật gần / xa',
+    usage:'Dùng “This is” cho đồ vật gần người nói, “That is” cho đồ vật xa hơn.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Gần', f:'This is a/an + danh từ.' },
+      { k:'Xa', f:'That is a/an + danh từ.' } ] } ],
+    examples:[
+      { en:'This is a book.', vi:'Đây là một quyển sách.' },
+      { en:'That is a bag.', vi:'Kia là một cái túi.' } ],
+    signals:['This is','That is'],
+    note:'Dùng “a” trước phụ âm, “an” trước nguyên âm (an apple, an orange).' },
+
+  { id:'g1t03', unit:3, unitName:'I have', title:'I have …', vi:'Sở hữu đồ vật',
+    usage:'Nói về những đồ vật mình có.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Cấu trúc', f:'I have a/an + danh từ.' },
+      { k:'Hai đồ vật', f:'I have a + N and a + N.' } ] } ],
+    examples:[
+      { en:'I have a pencil.', vi:'Mình có một cây bút chì.' },
+      { en:'I have a book and a ruler.', vi:'Mình có một quyển sách và một cái thước.' } ],
+    signals:['I have'],
+    note:'“Have” không đổi với “I”. Nhớ dùng a/an đúng.' },
+
+  { id:'g1t04', unit:4, unitName:'I like', title:'I like …', vi:'Thích cái gì',
+    usage:'Nói về sở thích đơn giản (đồ vật, màu sắc, món ăn…).',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Cấu trúc', f:'I like + danh từ / màu sắc.' } ] } ],
+    examples:[
+      { en:'I like apples.', vi:'Mình thích táo.' },
+      { en:'I like blue.', vi:'Mình thích màu xanh dương.' } ],
+    signals:['I like'],
+    note:'Sau “like” thường là danh từ số nhiều hoặc danh từ không đếm được khi nói chung.' },
+
+  { id:'g1t05', unit:5, unitName:'Numbers & Colours', title:'Numbers & Colours', vi:'Số đếm & Màu sắc',
+    usage:'Hỏi và trả lời về số và màu của đồ vật.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Số', f:'What number is it? → It’s + số.' },
+      { k:'Màu', f:'What colour is it? → It’s + màu.' } ] } ],
+    examples:[
+      { en:'What number is it? — It’s five.', vi:'Đây là số mấy? — Là số năm.' },
+      { en:'What colour is it? — It’s red.', vi:'Nó màu gì? — Màu đỏ.' } ],
+    signals:['What number','What colour','It’s'],
+    note:'Học thuộc các màu cơ bản: red, blue, green, yellow, black, white, orange, brown.' }
+];
+
+const GRADE2_TOPICS = [
+  { id:'g2t01', unit:1, unitName:'Actions', title:'Present Continuous', vi:'Thì Hiện tại tiếp diễn',
+    usage:'Miêu tả hành động đang xảy ra ngay lúc nói.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Khẳng định', f:'S + am/is/are + V-ing' },
+      { k:'Phủ định', f:'S + am/is/are + not + V-ing' },
+      { k:'Nghi vấn', f:'Am/Is/Are + S + V-ing?' } ] } ],
+    examples:[
+      { en:'He is running.', vi:'Anh ấy đang chạy.' },
+      { en:'What is she doing? — She is drawing.', vi:'Cô ấy đang làm gì? — Cô ấy đang vẽ.' } ],
+    signals:['now','Look!','Listen!'],
+    note:'Chủ ngữ I → am; He/She/It → is; You/We/They → are.' },
+
+  { id:'g2t02', unit:2, unitName:'Places', title:'Is there / Prepositions', vi:'Có … không? & Giới từ vị trí',
+    usage:'Hỏi sự hiện diện của đồ vật và chỉ vị trí (in, on, at, under…).',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Hỏi có/không', f:'Is there a/an + N? → Yes, there is. / No, there isn’t.' },
+      { k:'Vị trí', f:'The + N + is + in/on/under + …' } ] } ],
+    examples:[
+      { en:'Is there a book? — Yes, there is.', vi:'Có quyển sách nào không? — Có.' },
+      { en:'The cat is under the table.', vi:'Con mèo ở dưới bàn.' } ],
+    signals:['Is there','in','on','under','next to'],
+    note:'“There is” dùng với danh từ số ít; “There are” với số nhiều (lớp 3 sẽ mở rộng).' },
+
+  { id:'g2t03', unit:3, unitName:'Ability', title:'Can / Can’t', vi:'Khả năng',
+    usage:'Nói về khả năng làm được hoặc không làm được việc gì.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Hỏi', f:'Can + S + V nguyên mẫu?' },
+      { k:'Trả lời', f:'Yes, S + can. / No, S + can’t.' } ] } ],
+    examples:[
+      { en:'Can you swim? — Yes, I can.', vi:'Bạn có biết bơi không? — Có.' },
+      { en:'Can she draw a cat? — No, she can’t.', vi:'Cô ấy có vẽ được con mèo không? — Không.' } ],
+    signals:['Can','can’t'],
+    note:'Sau “can/can’t” luôn là động từ nguyên mẫu (không thêm to, s, ing).' },
+
+  { id:'g2t04', unit:4, unitName:'Seeing', title:'What can you see?', vi:'Bạn thấy gì?',
+    usage:'Hỏi và trả lời về những gì nhìn thấy xung quanh.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Cấu trúc', f:'What can you see? → I can see a/an + N.' } ] } ],
+    examples:[
+      { en:'What can you see? — I can see a tree.', vi:'Bạn thấy gì? — Mình thấy một cái cây.' } ],
+    signals:['What can you see','I can see'],
+    note:'Thường dùng với danh từ số ít + a/an.' },
+
+  { id:'g2t05', unit:5, unitName:'Likes', title:'Do you like …?', vi:'Bạn có thích … không?',
+    usage:'Hỏi sở thích đơn giản.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Hỏi', f:'Do you like + N?' },
+      { k:'Trả lời', f:'Yes, I do. / No, I don’t.' } ] } ],
+    examples:[
+      { en:'Do you like bananas? — Yes, I do.', vi:'Bạn thích chuối không? — Có.' } ],
+    signals:['Do you like','Yes, I do','No, I don’t'],
+    note:'Với “I/you/we/they” dùng do/don’t; lớp 3 sẽ học does với he/she.' }
+];
+
+const GRADE3_TOPICS = [
+  { id:'g3t01', unit:1, unitName:'Hello', title:'Greetings & Names', vi:'Chào hỏi, tên & tuổi',
+    usage:'Chào hỏi, hỏi tên và tuổi.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Tên', f:"What's your name? → My name's …" },
+      { k:'Tuổi', f:"How old are you? → I'm … years old." } ] } ],
+    examples:[
+      { en:"What's your name? — My name's Hoa.", vi:'Tên bạn là gì? — Tên mình là Hoa.' },
+      { en:"How old are you? — I'm eight years old.", vi:'Bạn bao nhiêu tuổi? — Mình tám tuổi.' } ],
+    signals:["What's your name","How old are you"],
+    note:'“Years old” luôn đi sau số tuổi.' },
+
+  { id:'g3t02', unit:2, unitName:'Friends & Body', title:'This is / What’s this?', vi:'Giới thiệu & Chỉ bộ phận cơ thể',
+    usage:'Giới thiệu bạn bè và hỏi về bộ phận cơ thể.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Giới thiệu', f:'This is … / That’s …' },
+      { k:'Hỏi đồ vật', f:"What's this? → It's a/an …" } ] } ],
+    examples:[
+      { en:'This is my friend, Tom.', vi:'Đây là bạn mình, Tom.' },
+      { en:"What's this? — It's a hand.", vi:'Đây là gì? — Là bàn tay.' } ],
+    signals:['This is','That’s',"What's this"],
+    note:'“It” dùng cho đồ vật và bộ phận cơ thể.' },
+
+  { id:'g3t03', unit:3, unitName:'School things', title:'Do you have …?', vi:'Bạn có … không?',
+    usage:'Hỏi và nói về đồ dùng học tập.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Hỏi', f:'Do you have a/an + N?' },
+      { k:'Trả lời', f:"Yes, I do. / No, I don't. I have …" } ] } ],
+    examples:[
+      { en:'Do you have a pencil? — Yes, I do.', vi:'Bạn có bút chì không? — Có.' } ],
+    signals:['Do you have','I have'],
+    note:'“Have” không thêm “s” với I/you/we/they.' },
+
+  { id:'g3t04', unit:4, unitName:'Colours & Family', title:'What colour / Who’s this?', vi:'Màu sắc & Gia đình',
+    usage:'Hỏi màu và hỏi thành viên gia đình.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Màu', f:'What colour is it? → It’s …' },
+      { k:'Gia đình', f:"Who's this? → It's my …" } ] } ],
+    examples:[
+      { en:'What colour is it? — It’s blue.', vi:'Nó màu gì? — Màu xanh dương.' },
+      { en:"Who's this? — It's my brother.", vi:'Đây là ai? — Anh trai mình.' } ],
+    signals:['What colour',"Who's this"],
+    note:'“My brother / sister / father / mother” là các từ cơ bản về gia đình.' },
+
+  { id:'g3t05', unit:5, unitName:'Jobs & Hobbies', title:'What’s his/her job? / Hobby', vi:'Nghề nghiệp & Sở thích',
+    usage:'Hỏi nghề nghiệp và sở thích.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Nghề', f:"What's his/her job? → He's/She's a …" },
+      { k:'Sở thích', f:"What's your hobby? → I like …" } ] } ],
+    examples:[
+      { en:"What's his job? — He's a doctor.", vi:'Anh ấy làm nghề gì? — Bác sĩ.' },
+      { en:"What's your hobby? — I like reading.", vi:'Sở thích của bạn là gì? — Mình thích đọc sách.' } ],
+    signals:["What's his job","What's your hobby","I like"],
+    note:'Nghề nghiệp thường đi với “a/an” (a teacher, an engineer).' },
+
+  { id:'g3t06', unit:6, unitName:'Actions now', title:'Present Continuous (review)', vi:'Hiện tại tiếp diễn (ôn)',
+    usage:'Hỏi và trả lời về hành động đang xảy ra.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Hỏi', f:'What are you doing? / What’s he/she doing?' },
+      { k:'Trả lời', f:"I'm / He's / She's + V-ing." } ] } ],
+    examples:[
+      { en:"What are you doing? — I'm reading.", vi:'Bạn đang làm gì? — Mình đang đọc sách.' },
+      { en:"What's he doing? — He's playing football.", vi:'Anh ấy đang làm gì? — Đang chơi bóng đá.' } ],
+    signals:['What are you doing','What’s he doing'],
+    note:'Nhớ chia đúng am/is/are theo chủ ngữ.' },
+
+  { id:'g3t07', unit:7, unitName:'Places & Permission', title:'Where’s …? / May I …?', vi:'Vị trí & Xin phép',
+    usage:'Hỏi vị trí và xin phép làm gì.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Vị trí', f:"Where's the …? → It's here / there." },
+      { k:'Xin phép', f:'May I …? → Yes, you can. / No, you can’t.' } ] } ],
+    examples:[
+      { en:"Where's the kitchen? — It's here.", vi:'Nhà bếp ở đâu? — Ở đây.' },
+      { en:'May I go out? — Yes, you can.', vi:'Mình có thể ra ngoài không? — Được.' } ],
+    signals:["Where's",'May I'],
+    note:'“May I” lịch sự hơn “Can I” khi xin phép thầy cô.' },
+
+  { id:'g3t08', unit:8, unitName:'Food & Offer', title:'Would you like …?', vi:'Mời ăn/uống',
+    usage:'Mời ai đó ăn hoặc uống.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Mời', f:'Would you like some …?' },
+      { k:'Trả lời', f:'Yes, please. / No, thanks. / I’d like some …' } ] } ],
+    examples:[
+      { en:'Would you like some tea? — No, thanks.', vi:'Bạn muốn uống trà không? — Không, cảm ơn.' },
+      { en:"I'd like some rice, please.", vi:'Cho mình một ít cơm nhé.' } ],
+    signals:['Would you like','Yes, please','No, thanks',"I'd like"],
+    note:'Dùng “some” trong lời mời dù là câu hỏi.' }
+];
+
+const GRADE4_TOPICS = [
+  { id:'g4t01', unit:1, unitName:'Friends', title:'Where are you from? / Jobs', vi:'Quê quán & Nghề nghiệp',
+    usage:'Hỏi quê quán, nghề nghiệp và ngoại hình.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Quê quán', f:'Where are you from? → I’m from …' },
+      { k:'Nghề', f:'What does he/she do? → He’s/She’s a …' },
+      { k:'Ngoại hình', f:'What does he/she look like? → He’s/She’s tall …' } ] } ],
+    examples:[
+      { en:"Where are you from? — I'm from Thailand.", vi:'Bạn đến từ đâu? — Từ Thái Lan.' },
+      { en:'What does your father do? — He’s a doctor.', vi:'Bố bạn làm nghề gì? — Bác sĩ.' } ],
+    signals:['Where are you from','What does he do','look like'],
+    note:'Với he/she dùng does + V nguyên mẫu.' },
+
+  { id:'g4t02', unit:2, unitName:'Time & Routines', title:'What time / Daily routines', vi:'Giờ giấc & Thói quen',
+    usage:'Hỏi giờ và thói quen hàng ngày.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Giờ', f:"What time is it? → It's …" },
+      { k:'Thói quen', f:'What time do you …? → I … at …' } ] } ],
+    examples:[
+      { en:'What time do you get up? — I get up at 6:30.', vi:'Bạn thức dậy lúc mấy giờ? — 6 giờ 30.' },
+      { en:'What do you do on Saturdays? — I play football.', vi:'Thứ Bảy bạn làm gì? — Chơi bóng đá.' } ],
+    signals:['What time','on Mondays','every day'],
+    note:'Thì hiện tại đơn: he/she + V-s/es.' },
+
+  { id:'g4t03', unit:3, unitName:'Ability & Subjects', title:'Can / Favourite subject', vi:'Khả năng & Môn học yêu thích',
+    usage:'Nói về khả năng và môn học yêu thích.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Khả năng', f:'Can you …? → Yes, I can. / No, I can’t.' },
+      { k:'Môn học', f:"What's your favourite subject? → It's …" } ] } ],
+    examples:[
+      { en:'Can he play the guitar? — No, he can’t, but he can play the piano.', vi:'Anh ấy chơi guitar được không? — Không, nhưng chơi piano được.' },
+      { en:"What's your favourite subject? — It's Science.", vi:'Môn yêu thích của bạn là gì? — Khoa học.' } ],
+    signals:['Can you',"What's your favourite subject"],
+    note:'Có thể dùng “but” để nói khả năng khác.' },
+
+  { id:'g4t04', unit:4, unitName:'Past (be)', title:'Was / Were', vi:'Quá khứ của to be',
+    usage:'Nói về nơi đã ở hoặc thời tiết trong quá khứ gần.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Khẳng định', f:'S + was/were + …' },
+      { k:'Nghi vấn', f:'Was/Were + S + …?' } ] } ],
+    examples:[
+      { en:'Where were you last summer? — I was in Japan.', vi:'Mùa hè năm ngoái bạn ở đâu? — Ở Nhật.' },
+      { en:'Was it sunny yesterday? — Yes, it was.', vi:'Hôm qua trời có nắng không? — Có.' } ],
+    signals:['yesterday','last summer','last weekend'],
+    note:'I/He/She/It → was; You/We/They → were.' },
+
+  { id:'g4t05', unit:5, unitName:'Places & Quantity', title:'How many / Where’s', vi:'Số lượng & Vị trí',
+    usage:'Hỏi số lượng và vị trí cơ sở vật chất.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Số lượng', f:'How many + N số nhiều + are there …?' },
+      { k:'Vị trí', f:"Where's your school? → It's in the …" } ] } ],
+    examples:[
+      { en:'How many classrooms are there at your school? — There are 20.', vi:'Trường bạn có bao nhiêu phòng học? — 20 phòng.' } ],
+    signals:['How many','There are',"Where's"],
+    note:'“How many” luôn đi với danh từ số nhiều.' },
+
+  { id:'g4t06', unit:6, unitName:'Actions now', title:'Present Continuous (review)', vi:'Hiện tại tiếp diễn (ôn)',
+    usage:'Miêu tả hành động đang diễn ra của người khác.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Hỏi', f:"What's he/she doing? / What are they doing?" },
+      { k:'Trả lời', f:"He's/She's/They're + V-ing." } ] } ],
+    examples:[
+      { en:"What are they doing? — They're playing soccer.", vi:'Họ đang làm gì? — Đang chơi bóng đá.' } ],
+    signals:['What’s he doing','What are they doing'],
+    note:'“They” luôn đi với “are”.' }
+];
+
+const GRADE5_TOPICS = [
+  { id:'g5t01', unit:1, unitName:'All about me', title:'Personal information', vi:'Thông tin cá nhân & Sở thích',
+    usage:'Giới thiệu bản thân, lớp, nơi sống và sở thích.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Giới thiệu', f:'Can you tell me about yourself? → I’m in … I live in …' },
+      { k:'Sở thích', f:"What's your favourite …? → It's … / I like …" } ] } ],
+    examples:[
+      { en:"Can you tell me about yourself? — I'm in Grade 5. I live in Hanoi.", vi:'Bạn có thể giới thiệu về bản thân không? — Mình học lớp 5. Sống ở Hà Nội.' } ],
+    signals:['Can you tell me about yourself',"What's your favourite"],
+    note:'Trả lời tự nhiên, không cần nhắc lại câu hỏi.' },
+
+  { id:'g5t02', unit:2, unitName:'Homes & Friends', title:'Do you live …? / Nationality', vi:'Nơi ở & Quốc tịch',
+    usage:'Hỏi nơi sống, địa chỉ và quốc tịch.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Nơi ở', f:'Do you live in this/that …? → Yes, I do. / No, I don’t.' },
+      { k:'Quốc tịch', f:'What nationality is he/she? → He’s/She’s …' } ] } ],
+    examples:[
+      { en:"What's your address? — It's 123 Le Duan Street.", vi:'Địa chỉ của bạn là gì? — Số 123 đường Lê Duẩn.' },
+      { en:"What nationality is she? — She's Japanese.", vi:'Cô ấy là người nước nào? — Người Nhật.' } ],
+    signals:['Do you live',"What's your address",'nationality'],
+    note:'Tên quốc tịch viết hoa (Japanese, American, Vietnamese).' },
+
+  { id:'g5t03', unit:3, unitName:'Free time & Future', title:'like + V-ing / would like to be', vi:'Sở thích & Ước mơ nghề nghiệp',
+    usage:'Nói về hoạt động thời gian rảnh và nghề nghiệp tương lai.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Sở thích', f:'What do you like doing …? → I like + V-ing.' },
+      { k:'Ước mơ', f:"What would you like to be? → I'd like to be a …" } ] } ],
+    examples:[
+      { en:'What do you like doing in your free time? — I like reading books.', vi:'Bạn thích làm gì lúc rảnh? — Thích đọc sách.' },
+      { en:"I'd like to be a doctor because I'd like to help people.", vi:'Mình muốn trở thành bác sĩ vì muốn giúp mọi người.' } ],
+    signals:['like + V-ing',"I'd like to be"],
+    note:'Sau “would like” dùng “to + V”.' },
+
+  { id:'g5t04', unit:4, unitName:'Past Simple', title:'Past Simple (did / was)', vi:'Thì Quá khứ đơn',
+    usage:'Nói về hành động đã xảy ra trong quá khứ.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'To be', f:'S + was/were …' },
+      { k:'Động từ thường', f:'S + V-ed / V2 · Did + S + V?' } ] } ],
+    examples:[
+      { en:'Were you at the park yesterday? — Yes, we were.', vi:'Hôm qua bạn có ở công viên không? — Có.' },
+      { en:'What did you do yesterday? — We played soccer.', vi:'Hôm qua bạn làm gì? — Chơi bóng đá.' } ],
+    signals:['yesterday','last week','Did you …?'],
+    note:'Câu hỏi và phủ định dùng did + V nguyên mẫu (không thêm -ed).' },
+
+  { id:'g5t05', unit:5, unitName:'Future & Advice', title:'Will / Should', vi:'Tương lai đơn & Lời khuyên',
+    usage:'Nói về kế hoạch tương lai và đưa ra lời khuyên.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Tương lai', f:'S + will/won’t + V · Will + S + V?' },
+      { k:'Lời khuyên', f:'You should + V. / What’s the matter? → I have a …' } ] } ],
+    examples:[
+      { en:'Will you visit your relatives for Tet? — Yes, I will.', vi:'Bạn sẽ thăm họ hàng vào Tết chứ? — Có.' },
+      { en:"What's the matter? — I have a headache. You should see a doctor.", vi:'Bạn sao vậy? — Đau đầu. Bạn nên đi khám.' } ],
+    signals:['will','won’t','should',"What's the matter"],
+    note:'“Should” là lời khuyên, không mang tính bắt buộc mạnh như “must”.' },
+
+  { id:'g5t06', unit:6, unitName:'Weather & Transport', title:'Weather / How can I get …?', vi:'Thời tiết & Phương tiện',
+    usage:'Hỏi thời tiết theo mùa và cách đi đến một nơi.',
+    structure:[ { label:'Công thức', rows:[
+      { k:'Thời tiết', f:"How's the weather in …? → It's …" },
+      { k:'Phương tiện', f:'How can I get to …? → You can get there by …' } ] } ],
+    examples:[
+      { en:"How's the weather in Hanoi in winter? — It's cold.", vi:'Mùa đông ở Hà Nội thế nào? — Lạnh.' },
+      { en:'How can I get to the museum? — You can get there by bus.', vi:'Đến bảo tàng bằng cách nào? — Đi xe buýt.' } ],
+    signals:["How's the weather",'by bus','by bike'],
+    note:'Giới từ “by” đi với phương tiện (by bus, by car, by bike).' }
+];
+
+const GRADE_DATA = {
+  1: { topics: GRADE1_TOPICS, label: 'LỚP 1', placeholder: 'Các chủ điểm ngữ pháp lớp 1 Global Success — chào hỏi, sở hữu, thích, số & màu sắc.' },
+  2: { topics: GRADE2_TOPICS, label: 'LỚP 2', placeholder: 'Các chủ điểm ngữ pháp lớp 2 — hiện tại tiếp diễn, vị trí, can, sở thích.' },
+  3: { topics: GRADE3_TOPICS, label: 'LỚP 3', placeholder: 'Các chủ điểm ngữ pháp lớp 3 — tên tuổi, đồ dùng, gia đình, sở thích, xin phép, mời.' },
+  4: { topics: GRADE4_TOPICS, label: 'LỚP 4', placeholder: 'Các chủ điểm ngữ pháp lớp 4 — quê quán, thói quen, khả năng, was/were, số lượng.' },
+  5: { topics: GRADE5_TOPICS, label: 'LỚP 5', placeholder: 'Các chủ điểm ngữ pháp lớp 5 — thông tin cá nhân, quá khứ đơn, will, should, thời tiết.' }
+};
+
+/* ================= QUIZ ENGINE (đơn giản hoá cho tiểu học) ================= */
+function pick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+function shuffle(arr){ const a=[...arr]; for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+function makeMCQ({topicId, level, prompt, correct, wrongPool, explain}){
+  const opts = shuffle([correct, ...shuffle(wrongPool).slice(0,3)]).slice(0,4);
+  while(opts.length < 4) opts.push(pick(wrongPool));
+  const correctIdx = opts.indexOf(correct);
+  return { topicId, level, qtype:'mcq', prompt, options:opts, correct:correctIdx, answer:correct, explain };
+}
+function makeFill({topicId, level, prompt, answer, accepted, explain}){
+  return { topicId, level, qtype:'fill', prompt, answer, accepted: accepted||[answer], explain };
+}
+function makeError({topicId, level, prompt, answer, explain}){
+  return { topicId, level, qtype:'error', prompt, answer, accepted:[answer], explain };
+}
+function makeReorder({topicId, level, prompt, answer, explain}){
+  return { topicId, level, qtype:'reorder', prompt, answer, accepted:[answer], explain };
+}
+
+/* ================= NEW GENERATOR ENGINE =================
+   - Mỗi chủ điểm khai báo 1 SPEC gồm { items, build(item, form) }.
+   - build() trả về "biến thể câu" (variant) cho 1 trong 3 khuôn: 'aff' (khẳng định),
+     'int' (nghi vấn), 'neg' (phủ định). Field tối thiểu: full, blankPrompt, blankAnswer, explain.
+     Field tuỳ chọn: accepted, wrong (>=3 để có MCQ), tokens (>=3 để có Reorder),
+     errorVersion (để có dạng Sửa lỗi sai).
+   - weightedForm() chọn khuôn câu độc lập với qtype, với trọng số nghiêng về
+     nghi vấn/phủ định (~30% khẳng định / 35% nghi vấn / 35% phủ định) để đảm bảo
+     tỉ lệ nghi vấn+phủ định ≥ 40% theo yêu cầu trong todo.md.
+   - qtype (mcq/fill/error/reorder) được random ĐỘC LẬP, chỉ trong số các dạng mà
+     variant hỗ trợ (tránh câu hỏi bị thiếu dữ liệu).
+   - Chống trùng lặp: theo dõi các `prompt` đã sinh trong phạm vi 1 lần gọi.
+================================================================= */
+const LEVELS = ['basic','advanced','thinking'];
+function cap(s){ return s.charAt(0).toUpperCase()+s.slice(1); }
+// Hạ chữ cái đầu của chủ ngữ khi nó không còn đứng đầu câu (vd sau trợ động từ
+// trong câu hỏi: "Are they..." chứ không phải "Are They..."). Giữ nguyên "I".
+function subjLower(s){ return s==='I' ? 'I' : s.charAt(0).toLowerCase()+s.slice(1); }
+// "a" trước phụ âm, "an" trước nguyên âm (vd: an engineer).
+function artFor(w){ return /^[aeiou]/i.test(w) ? 'an' : 'a'; }
+
+function weightedForm(compoundEnabled){
+  const r = Math.random();
+  if(!compoundEnabled){
+    if(r < 0.30) return 'aff';
+    if(r < 0.65) return 'int';
+    return 'neg';
+  }
+  // Chủ điểm lớp 4-5 "phù hợp" có thêm khuôn câu ghép (compound) để tăng độ khó
+  // về CẤU TRÚC câu, không chỉ từ vựng. Vẫn giữ nghi vấn+phủ định ≥ 40%.
+  if(r < 0.20) return 'aff';
+  if(r < 0.45) return 'int';
+  if(r < 0.75) return 'neg';
+  return 'compound';
+}
+
+// Câu ghép có liên từ (but/because/so/and) nối 2 mệnh đề. Học sinh phải hiểu
+// quan hệ giữa 2 mệnh đề (tương phản/nguyên nhân/kết quả/bổ sung) nên luôn
+// được xếp mức "tư duy" (levelFor xử lý riêng bên dưới).
+function buildCompoundVariant(clause1, conj, clause2, explainNote){
+  const conjPool = ['but','because','so','and'];
+  const wrong = conjPool.filter(c=>c!==conj);
+  const full = `${clause1}, ${conj} ${clause2}.`;
+  return {
+    full,
+    blankPrompt: `${clause1}, ___ ${clause2}.`,
+    blankAnswer: conj,
+    wrong,
+    tokens: [`${clause1},`, conj, `${clause2}.`],
+    errorVersion: `${clause1}, ${pick(wrong)} ${clause2}.`,
+    explain: `Câu ghép dùng liên từ <b>${conj}</b> — ${explainNote}`
+  };
+}
+
+// Gắn mức độ THEO ĐÚNG bản chất nhận thức của dạng bài + khuôn câu, thay vì
+// random tuỳ tiện — để "cơ bản/nâng cao/tư duy" phản ánh đúng độ khó thật:
+//  - mcq (nhận diện, chọn trong 4 đáp án có sẵn) → dễ nhất
+//  - fill/error (phải tự nhớ và viết ra đáp án đúng) → trung bình
+//  - reorder (phải tự dựng lại toàn bộ trật tự câu) → khó nhất
+//  - câu phủ định (neg) luôn khó hơn khẳng định/nghi vấn ở cùng dạng bài,
+//    vì học sinh phải nhớ thêm trợ động từ phủ định.
+function levelFor(qtype, form){
+  if(form==='compound') return 'thinking';
+  const qtypeScore = { mcq:0, fill:1, error:1, reorder:2 }[qtype] ?? 1;
+  const formScore = form==='neg' ? 1 : 0;
+  const score = qtypeScore + formScore;
+  if(score <= 0) return 'basic';
+  if(score === 1) return 'advanced';
+  return 'thinking';
+}
+
+function genFromSpec(topicId, spec, n){
+  const used = new Set();
+  const out = [];
+
+  function buildQuestionFromVariant(level, qtype, v){
+    if(qtype==='mcq'){
+      return makeMCQ({topicId, level, prompt:v.blankPrompt, correct:v.blankAnswer, wrongPool:v.wrong, explain:v.explain});
+    } else if(qtype==='error'){
+      return makeError({topicId, level, prompt:`Tìm và sửa lỗi sai: "${v.errorVersion}"`, answer:v.full, explain:v.explain});
+    } else if(qtype==='reorder'){
+      return makeReorder({topicId, level, prompt:`Sắp xếp các từ sau thành câu đúng: "${shuffle(v.tokens).join(' / ')}"`, answer:v.full, explain:v.explain});
+    }
+    return makeFill({topicId, level, prompt:v.blankPrompt, answer:v.blankAnswer, accepted:v.accepted, explain:v.explain});
+  }
+
+  // Dạng "sắp xếp câu" (reorder) có vô số cách hiển thị khác nhau (do xáo trộn
+  // thứ tự từ mỗi lần), nên nếu random tự do, nó sẽ áp đảo và lấp đầy đề trước
+  // khi các câu "cơ bản" (vốn có ít biến thể hơn, dễ bị trùng và bị bỏ qua) kịp
+  // xuất hiện. Vì vậy ta CHỦ ĐỘNG dành riêng một lượt cho từng mức độ trước,
+  // rồi mới lấp phần còn thiếu tự do — đảm bảo cả 3 mức đều có mặt khi chủ điểm
+  // còn đủ tổ hợp câu để tạo ra chúng.
+  function fillLevel(targetLevel, quota, maxAttempts){
+    let attempts = 0, added = 0;
+    while(attempts < maxAttempts && added < quota && out.length < n){
+      attempts++;
+      const item = pick(spec.items);
+      const form = weightedForm(!!spec.compound);
+      const v = spec.build(item, form);
+      if(!v) continue;
+      const qtypes = ['fill'];
+      if(v.wrong && v.wrong.length>=3) qtypes.push('mcq');
+      if(v.errorVersion) qtypes.push('error');
+      if(v.tokens && v.tokens.length>=3) qtypes.push('reorder');
+      const qtype = pick(qtypes);
+      const level = levelFor(qtype, form);
+      if(targetLevel && level !== targetLevel) continue;
+      const q = buildQuestionFromVariant(level, qtype, v);
+      if(used.has(q.prompt)) continue;
+      used.add(q.prompt);
+      out.push(q);
+      added++;
+    }
+  }
+
+  const perLevelQuota = Math.max(1, Math.ceil(n/3));
+  ['basic','advanced','thinking'].forEach(lvl => fillLevel(lvl, perLevelQuota, 300));
+  // Lấp phần còn thiếu (nếu chủ điểm còn dư tổ hợp câu) bằng bất kỳ mức nào.
+  fillLevel(null, n, n*20 + 100);
+
+  return shuffle(out);
+}
+
+const SPECS = {};
+
+/* ---------------- LỚP 1 ---------------- */
+
+SPECS.g1t01 = { // Greetings & Introductions
+  items: ['Mai','Bill','Lan','Nam','Hoa','Tom','Linh','Peter'],
+  build(name, form){
+    if(form==='aff'){
+      return { full:`Hi, I'm ${name}.`, blankPrompt:`___, I'm ${name}.`, blankAnswer:'Hi', accepted:['Hi','Hello'],
+        wrong:['Bye','Goodbye','What'], tokens:['Hi,', "I'm", `${name}.`],
+        explain:`Dùng <b>Hi</b> hoặc <b>Hello</b> để chào khi gặp mặt.` };
+    }
+    if(form==='int'){
+      return { full:'How are you?', blankPrompt:'___ are you?', blankAnswer:'How',
+        wrong:['What','Who','Why'], tokens:['How','are','you?'],
+        explain:`Hỏi thăm dùng <b>How are you?</b>` };
+    }
+    const other = pick(['Mai','Bill','Lan','Nam','Hoa','Tom','Linh','Peter'].filter(x=>x!==name));
+    return { full:`I'm not ${other}, I'm ${name}.`, blankPrompt:`I ___ ${other}, I'm ${name}.`,
+      blankAnswer:"'m not", accepted:["'m not",'am not'], wrong:['am','is not','are not'],
+      tokens:[`I'm not ${other},`, "I'm", `${name}.`], errorVersion:`I not am ${other}, I'm ${name}.`,
+      explain:`Phủ định của "to be" với I: <b>I'm not</b>.` };
+  }
+};
+
+SPECS.g1t02 = { // This is / That is
+  items: [{n:'book',art:'a'},{n:'apple',art:'an'},{n:'bag',art:'a'},{n:'orange',art:'an'},{n:'pen',art:'a'},{n:'egg',art:'an'},{n:'hat',art:'a'},{n:'umbrella',art:'an'}],
+  build(it, form){
+    if(form==='aff'){
+      return { full:`This is ${it.art} ${it.n}.`, blankPrompt:`This is ___ ${it.n}.`, blankAnswer:it.art,
+        wrong:['a','an','the','some'].filter(x=>x!==it.art), tokens:['This','is',it.art,`${it.n}.`],
+        errorVersion:`This is ${it.art==='a'?'an':'a'} ${it.n}.`,
+        explain:`"${it.n}" bắt đầu bằng âm ${it.art==='an'?'nguyên âm':'phụ âm'} → dùng <b>${it.art}</b>.` };
+    }
+    if(form==='int'){
+      return { full:`Is that ${it.art} ${it.n}?`, blankPrompt:`___ that ${it.art} ${it.n}?`, blankAnswer:'Is',
+        wrong:['Are','Do','Am'], tokens:['Is','that',it.art,`${it.n}?`],
+        explain:`Câu hỏi với "that": <b>Is that...?</b>` };
+    }
+    return { full:`That is not ${it.art} ${it.n}.`, blankPrompt:`That ___ ${it.art} ${it.n}.`,
+      blankAnswer:'is not', accepted:['is not',"isn't"], wrong:['am not','are not','do not'],
+      tokens:['That','is','not',`${it.art} ${it.n}.`], errorVersion:`That not is ${it.art} ${it.n}.`,
+      explain:`Phủ định: That <b>is not</b> (isn't) ...` };
+  }
+};
+
+SPECS.g1t03 = { // I have
+  items: ['pencil','book','ruler','pen','bag','eraser','crayon','notebook'],
+  build(t, form){
+    const art = artFor(t);
+    if(form==='aff'){
+      return { full:`I have ${art} ${t}.`, blankPrompt:`I ___ ${art} ${t}.`, blankAnswer:'have',
+        wrong:['has','am','is'], tokens:['I','have',art,`${t}.`],
+        explain:`"Have" không đổi với "I".` };
+    }
+    if(form==='int'){
+      return { full:`Do you have ${art} ${t}?`, blankPrompt:`___ you have ${art} ${t}?`, blankAnswer:'Do',
+        wrong:['Are','Is','Does'], tokens:['Do','you','have',art,`${t}?`],
+        explain:`Hỏi sở hữu: <b>Do you have...?</b>` };
+    }
+    return { full:`I don't have ${art} ${t}.`, blankPrompt:`I ___ have ${art} ${t}.`, blankAnswer:"don't",
+      accepted:["don't",'do not'], wrong:["doesn't",'not','isn\'t'], tokens:['I',"don't",'have',art,`${t}.`],
+      errorVersion:`I not have ${art} ${t}.`, explain:`Phủ định: I <b>don't</b> have...` };
+  }
+};
+
+SPECS.g1t04 = { // I like
+  items: ['apples','bananas','blue','red','cats','dogs','oranges','grapes'],
+  build(l, form){
+    if(form==='aff'){
+      return { full:`I like ${l}.`, blankPrompt:`I ___ ${l}.`, blankAnswer:'like',
+        wrong:['likes','liking','liked'], tokens:['I','like',`${l}.`],
+        explain:`Với "I" dùng <b>like</b> (không thêm "s").` };
+    }
+    if(form==='int'){
+      return { full:`Do you like ${l}?`, blankPrompt:`___ you like ${l}?`, blankAnswer:'Do',
+        wrong:['Are','Does','Is'], tokens:['Do','you','like',`${l}?`],
+        explain:`Hỏi sở thích: <b>Do you like...?</b>` };
+    }
+    return { full:`I don't like ${l}.`, blankPrompt:`I ___ like ${l}.`, blankAnswer:"don't",
+      accepted:["don't",'do not'], wrong:["doesn't",'not','isn\'t'], tokens:['I',"don't",'like',`${l}.`],
+      errorVersion:`I no like ${l}.`, explain:`Phủ định: I <b>don't</b> like...` };
+  }
+};
+
+SPECS.g1t05 = { // Numbers & Colours
+  items: ['red','blue','green','yellow','black','white','orange','pink'],
+  build(c, form){
+    const others = ['red','blue','green','yellow','black','white','orange','pink'].filter(x=>x!==c);
+    if(form==='aff'){
+      return { full:`It is ${c}.`, blankPrompt:`What colour is it? — It's ___.`, blankAnswer:c,
+        wrong:shuffle(others).slice(0,3), tokens:['It','is',`${c}.`],
+        explain:`Trả lời màu: It's <b>${c}</b>.` };
+    }
+    if(form==='int'){
+      return { full:'What colour is it?', blankPrompt:'What ___ is it?', blankAnswer:'colour',
+        wrong:['number','name','size'], tokens:['What','colour','is','it?'],
+        explain:`Hỏi màu: <b>What colour is it?</b>` };
+    }
+    return { full:`It is not ${c}.`, blankPrompt:`It ___ ${c}.`, blankAnswer:'is not',
+      accepted:['is not',"isn't"], wrong:['am not','are not','do not'], tokens:['It','is','not',`${c}.`],
+      errorVersion:`It not is ${c}.`, explain:`Phủ định: It <b>is not</b> (isn't) ${c}.` };
+  }
+};
+
+/* ---------------- LỚP 2 ---------------- */
+
+SPECS.g2t01 = { // Present Continuous
+  items: [
+    {s:'He',v:'run',ving:'running'},{s:'She',v:'draw',ving:'drawing'},{s:'They',v:'play',ving:'playing'},
+    {s:'I',v:'read',ving:'reading'},{s:'We',v:'sing',ving:'singing'},{s:'You',v:'write',ving:'writing'},
+    {s:'It',v:'jump',ving:'jumping'},{s:'He',v:'swim',ving:'swimming'}
+  ],
+  build(a, form){
+    const be = a.s==='I' ? 'am' : (a.s==='He'||a.s==='She'||a.s==='It' ? 'is' : 'are');
+    if(form==='aff'){
+      return { full:`${a.s} ${be} ${a.ving}.`, blankPrompt:`${a.s} ___ ${a.ving}.`, blankAnswer:be,
+        wrong:['am','is','are','be'].filter(x=>x!==be), tokens:[a.s,be,`${a.ving}.`],
+        errorVersion:`${a.s} ${be} ${a.v}.`,
+        explain:`Hiện tại tiếp diễn: S + am/is/are + V-ing → <b>${be} ${a.ving}</b>.` };
+    }
+    if(form==='int'){
+      const Be = cap(be);
+      const sMid = subjLower(a.s);
+      return { full:`${Be} ${sMid} ${a.ving}?`, blankPrompt:`___ ${sMid} ${a.ving}?`, blankAnswer:Be,
+        wrong:['Am','Is','Are','Do'].filter(x=>x!==Be), tokens:[Be,sMid,`${a.ving}?`],
+        explain:`Câu hỏi: Am/Is/Are + S + V-ing? → <b>${Be} ${sMid} ${a.ving}?</b>` };
+    }
+    return { full:`${a.s} ${be} not ${a.ving}.`, blankPrompt:`${a.s} ${be} ___ ${a.ving}.`, blankAnswer:'not',
+      wrong:['no',"don't","isn't"], tokens:[a.s,be,'not',`${a.ving}.`], errorVersion:`${a.s} not ${be} ${a.ving}.`,
+      explain:`Phủ định: S + am/is/are + <b>not</b> + V-ing.` };
+  }
+};
+
+SPECS.g2t02 = { // Is there / Prepositions
+  items: [
+    {type:'prep', obj:'The book', prep:'on', place:'the table'},
+    {type:'prep', obj:'The cat', prep:'under', place:'the chair'},
+    {type:'prep', obj:'The bag', prep:'in', place:'the box'},
+    {type:'prep', obj:'The pen', prep:'on', place:'the desk'},
+    {type:'there', thing:'a book'},{type:'there', thing:'a pen'},
+    {type:'there', thing:'a cat'},{type:'there', thing:'an apple'}
+  ],
+  build(it, form){
+    if(it.type==='there'){
+      if(form==='aff') return { full:`There is ${it.thing} here.`, blankPrompt:`There ___ ${it.thing} here.`,
+        blankAnswer:'is', wrong:['are','am','be'], tokens:['There','is',it.thing,'here.'],
+        explain:`Danh từ số ít → <b>There is</b>.` };
+      if(form==='int') return { full:`Is there ${it.thing}?`, blankPrompt:`___ there ${it.thing}?`,
+        blankAnswer:'Is', wrong:['Are','Do','Does'], tokens:['Is','there',`${it.thing}?`],
+        explain:`Hỏi sự tồn tại: <b>Is there...?</b>` };
+      return { full:`There isn't ${it.thing} here.`, blankPrompt:`There ___ ${it.thing} here.`,
+        blankAnswer:"isn't", accepted:["isn't",'is not'], wrong:["aren't",'not is',"don't"],
+        tokens:['There',"isn't",it.thing,'here.'], errorVersion:`There not is ${it.thing} here.`,
+        explain:`Phủ định: There <b>isn't</b>...` };
+    }
+    const objLow = it.obj.toLowerCase();
+    if(form==='aff') return { full:`${it.obj} is ${it.prep} ${it.place}.`, blankPrompt:`${it.obj} is ___ ${it.place}.`,
+      blankAnswer:it.prep, wrong:['in','on','under','next to'].filter(x=>x!==it.prep).slice(0,3),
+      tokens:[it.obj,'is',it.prep,`${it.place}.`], explain:`Giới từ chỉ vị trí: <b>${it.prep}</b>.` };
+    if(form==='int') return { full:`Is ${objLow} ${it.prep} ${it.place}?`, blankPrompt:`___ ${objLow} ${it.prep} ${it.place}?`,
+      blankAnswer:'Is', wrong:['Are','Do','Does'], tokens:['Is',objLow,it.prep,`${it.place}?`],
+      explain:`Hỏi vị trí: <b>Is...?</b>` };
+    return { full:`${it.obj} is not ${it.prep} ${it.place}.`, blankPrompt:`${it.obj} is ___ ${it.prep} ${it.place}.`,
+      blankAnswer:'not', wrong:['no',"isn't here","don't"], tokens:[it.obj,'is','not',it.prep,`${it.place}.`],
+      errorVersion:`${it.obj} not is ${it.prep} ${it.place}.`, explain:`Phủ định: is <b>not</b> + giới từ.` };
+  }
+};
+
+SPECS.g2t03 = { // Can / Can't
+  items: ['swim','draw','sing','ride a bike','play football','cook','dance','skate'],
+  build(act, form){
+    if(form==='aff') return { full:`I can ${act}.`, blankPrompt:`I ___ ${act}.`, blankAnswer:'can',
+      wrong:["can't",'do','am'], tokens:['I','can',`${act}.`], explain:`Khả năng: S + <b>can</b> + V.` };
+    if(form==='int') return { full:`Can you ${act}?`, blankPrompt:`___ you ${act}?`, blankAnswer:'Can',
+      wrong:['Do','Are','Is'], tokens:['Can','you',`${act}?`], explain:`Hỏi khả năng: <b>Can you...?</b>` };
+    return { full:`She can't ${act}.`, blankPrompt:`She ___ ${act}.`, blankAnswer:"can't",
+      accepted:["can't",'cannot'], wrong:['can',"doesn't","isn't"], tokens:['She',"can't",`${act}.`],
+      errorVersion:`She can't to ${act}.`, explain:`Sau can/can't luôn là V nguyên mẫu, không "to".` };
+  }
+};
+
+SPECS.g2t04 = { // What can you see?
+  items: ['a tree','a bird','a cat','a flower','a car','a dog','a house','a star'],
+  build(t, form){
+    if(form==='aff') return { full:`I can see ${t}.`, blankPrompt:`I can ___ ${t}.`, blankAnswer:'see',
+      wrong:['look','watch','saw'], tokens:['I','can','see',`${t}.`], explain:`Trả lời: I can <b>see</b> ...` };
+    if(form==='int') return { full:'What can you see?', blankPrompt:'What can ___ see?', blankAnswer:'you',
+      wrong:['I','he','they'], tokens:['What','can','you','see?'], explain:`Câu hỏi: <b>What can you see?</b>` };
+    return { full:`I can't see ${t}.`, blankPrompt:`I ___ see ${t}.`, blankAnswer:"can't",
+      accepted:["can't",'cannot'], wrong:['can',"don't","isn't"], tokens:['I',"can't",'see',`${t}.`],
+      errorVersion:`I not can see ${t}.`, explain:`Phủ định: I <b>can't</b> see...` };
+  }
+};
+
+SPECS.g2t05 = { // Do you like ...?
+  items: ['bananas','apples','milk','ice cream','oranges','fish','rice','chicken'],
+  build(f, form){
+    if(form==='aff') return { full:`I like ${f}.`, blankPrompt:`I ___ ${f}.`, blankAnswer:'like',
+      wrong:['likes','liking','liked'], tokens:['I','like',`${f}.`], explain:`Với "I" dùng <b>like</b>.` };
+    if(form==='int') return { full:`Do you like ${f}?`, blankPrompt:`___ you like ${f}?`, blankAnswer:'Do',
+      wrong:['Are','Does','Is'], tokens:['Do','you','like',`${f}?`], explain:`Hỏi sở thích: <b>Do you like...?</b>` };
+    return { full:`I don't like ${f}.`, blankPrompt:`I ___ like ${f}.`, blankAnswer:"don't",
+      accepted:["don't",'do not'], wrong:["doesn't",'not',"isn't"], tokens:['I',"don't",'like',`${f}.`],
+      errorVersion:`I no like ${f}.`, explain:`Phủ định: I <b>don't</b> like...` };
+  }
+};
+
+/* ---------------- LỚP 3 ---------------- */
+
+SPECS.g3t01 = { // Greetings/Names & Age
+  items: [{name:'Hoa',age:8},{name:'Nam',age:9},{name:'Lan',age:7},{name:'Minh',age:10},{name:'An',age:8},{name:'Linh',age:9}],
+  build(p, form){
+    if(form==='aff') return { full:`My name's ${p.name}.`, blankPrompt:`My name ___ ${p.name}.`, blankAnswer:"'s",
+      accepted:["'s",'is'], wrong:['am','are','be'], tokens:['My',"name's",`${p.name}.`],
+      explain:`Giới thiệu tên: My name's ...` };
+    if(form==='int') return { full:'How old are you?', blankPrompt:'How ___ are you?', blankAnswer:'old',
+      wrong:['many','much','age'], tokens:['How','old','are','you?'], explain:`Hỏi tuổi: <b>How old are you?</b>` };
+    return { full:`I'm not ten, I'm ${p.age}.`, blankPrompt:`I ___ ten, I'm ${p.age}.`, blankAnswer:"'m not",
+      accepted:["'m not",'am not'], wrong:['not am',"isn't","don't"], tokens:[`I'm not ten,`,"I'm",`${p.age}.`],
+      errorVersion:`I not am ten, I'm ${p.age}.`, explain:`Phủ định: I <b>'m not</b> (am not) ...` };
+  }
+};
+
+SPECS.g3t02 = { // This is / What's this (Friends & Body)
+  items: ['hand','nose','ear','eye','mouth','foot','arm','leg'],
+  build(b, form){
+    if(form==='aff') return { full:`This is my ${b}.`, blankPrompt:`This ___ my ${b}.`, blankAnswer:'is',
+      wrong:['am','are','be'], tokens:['This','is','my',`${b}.`], explain:`This <b>is</b> my ${b}.` };
+    if(form==='int') return { full:'What is this?', blankPrompt:'___ is this?', blankAnswer:'What',
+      wrong:['Who','How','Where'], tokens:['What','is','this?'], explain:`Hỏi đồ vật/bộ phận: <b>What's this?</b>` };
+    const altPart = b==='foot' ? 'hand' : 'foot';
+    const artAlt = artFor(altPart), artB = artFor(b);
+    return { full:`It isn't ${artAlt} ${altPart}, it's ${artB} ${b}.`, blankPrompt:`It ___ ${artAlt} ${altPart}, it's ${artB} ${b}.`, blankAnswer:"isn't",
+      accepted:["isn't",'is not'], wrong:["aren't","don't",'not is'], tokens:[`It isn't ${artAlt} ${altPart},`,`it's`,`${artB} ${b}.`],
+      errorVersion:`It not is ${artAlt} ${altPart}, it's ${artB} ${b}.`, explain:`Phủ định: It <b>isn't</b> ...` };
+  }
+};
+
+SPECS.g3t03 = { // Do you have ...? (School things)
+  items: ['pencil','pen','ruler','book','eraser','crayon','bag','notebook'],
+  build(t, form){
+    const art = artFor(t);
+    if(form==='aff') return { full:`I have ${art} ${t}.`, blankPrompt:`I ___ ${art} ${t}.`, blankAnswer:'have',
+      wrong:['has','am','is'], tokens:['I','have',art,`${t}.`], explain:`"Have" không thêm "s" với I.` };
+    if(form==='int') return { full:`Do you have ${art} ${t}?`, blankPrompt:`___ you have ${art} ${t}?`, blankAnswer:'Do',
+      wrong:['Are','Is','Does'], tokens:['Do','you','have',art,`${t}?`], explain:`Hỏi: <b>Do you have...?</b>` };
+    return { full:`I don't have ${art} ${t}.`, blankPrompt:`I ___ have ${art} ${t}.`, blankAnswer:"don't",
+      accepted:["don't",'do not'], wrong:["doesn't",'not',"isn't"], tokens:['I',"don't",'have',art,`${t}.`],
+      errorVersion:`I not have ${art} ${t}.`, explain:`Phủ định: I <b>don't</b> have...` };
+  }
+};
+
+SPECS.g3t04 = { // What colour / Who's this (Colours & Family)
+  items: [
+    {type:'colour', c:'blue'},{type:'colour', c:'red'},{type:'colour', c:'green'},{type:'colour', c:'yellow'},
+    {type:'family', m:'brother'},{type:'family', m:'sister'},{type:'family', m:'father'},{type:'family', m:'mother'}
+  ],
+  build(it, form){
+    if(it.type==='colour'){
+      const others = ['blue','red','green','yellow'].filter(x=>x!==it.c);
+      if(form==='aff') return { full:`It is ${it.c}.`, blankPrompt:'It is ___.', blankAnswer:it.c,
+        wrong:others, tokens:['It','is',`${it.c}.`], explain:`It is <b>${it.c}</b>.` };
+      if(form==='int') return { full:'What colour is it?', blankPrompt:'What ___ is it?', blankAnswer:'colour',
+        wrong:['number','name','size'], tokens:['What','colour','is','it?'], explain:`Hỏi màu: <b>What colour is it?</b>` };
+      return { full:`It is not ${it.c}.`, blankPrompt:`It ___ ${it.c}.`, blankAnswer:'is not',
+        accepted:['is not',"isn't"], wrong:['am not','are not','do not'], tokens:['It','is','not',`${it.c}.`],
+        errorVersion:`It not is ${it.c}.`, explain:`Phủ định: It <b>is not</b> ${it.c}.` };
+    }
+    if(form==='aff') return { full:`It's my ${it.m}.`, blankPrompt:'It\'s my ___.', blankAnswer:it.m,
+      wrong:['brother','sister','father','mother'].filter(x=>x!==it.m), tokens:["It's",'my',`${it.m}.`],
+      explain:`Giới thiệu người thân: It's my ${it.m}.` };
+    if(form==='int') return { full:'Who is this?', blankPrompt:'___ is this?', blankAnswer:'Who',
+      wrong:['What','How','Where'], tokens:['Who','is','this?'], explain:`Hỏi người: <b>Who's this?</b>` };
+    return { full:`This is not my ${it.m}.`, blankPrompt:`This ___ my ${it.m}.`, blankAnswer:'is not',
+      accepted:['is not',"isn't"], wrong:['am not','are not','do not'], tokens:['This','is','not','my',`${it.m}.`],
+      errorVersion:`This not is my ${it.m}.`, explain:`Phủ định: This <b>is not</b> my ${it.m}.` };
+  }
+};
+
+SPECS.g3t05 = { // Job / Hobby
+  items: [
+    {type:'job', j:'doctor'},{type:'job', j:'teacher'},{type:'job', j:'nurse'},{type:'job', j:'driver'},
+    {type:'hobby', h:'reading'},{type:'hobby', h:'swimming'},{type:'hobby', h:'drawing'},{type:'hobby', h:'singing'}
+  ],
+  build(it, form){
+    if(it.type==='job'){
+      const others = ['doctor','teacher','nurse','driver'].filter(x=>x!==it.j);
+      if(form==='aff') return { full:`He's a ${it.j}.`, blankPrompt:"He's a ___.", blankAnswer:it.j,
+        wrong:others, tokens:["He's",'a',`${it.j}.`], explain:`He's a <b>${it.j}</b>.` };
+      if(form==='int') return { full:"What's his job?", blankPrompt:"What's his ___?", blankAnswer:'job',
+        wrong:['name','hobby','age'], tokens:["What's",'his','job?'], explain:`Hỏi nghề nghiệp: <b>What's his job?</b>` };
+      return { full:`He is not a ${it.j}.`, blankPrompt:`He ___ a ${it.j}.`, blankAnswer:'is not',
+        accepted:['is not',"isn't"], wrong:['am not','are not','do not'], tokens:['He','is','not','a',`${it.j}.`],
+        errorVersion:`He not is a ${it.j}.`, explain:`Phủ định: He <b>is not</b> a ${it.j}.` };
+    }
+    if(form==='aff') return { full:`I like ${it.h}.`, blankPrompt:`I ___ ${it.h}.`, blankAnswer:'like',
+      wrong:['likes','liking','liked'], tokens:['I','like',`${it.h}.`], explain:`I <b>like</b> ${it.h}.` };
+    if(form==='int') return { full:"What's your hobby?", blankPrompt:"What's your ___?", blankAnswer:'hobby',
+      wrong:['job','name','age'], tokens:["What's",'your','hobby?'], explain:`Hỏi sở thích: <b>What's your hobby?</b>` };
+    return { full:`I don't like ${it.h}.`, blankPrompt:`I ___ like ${it.h}.`, blankAnswer:"don't",
+      accepted:["don't",'do not'], wrong:["doesn't",'not',"isn't"], tokens:['I',"don't",'like',`${it.h}.`],
+      errorVersion:`I no like ${it.h}.`, explain:`Phủ định: I <b>don't</b> like ${it.h}.` };
+  }
+};
+
+SPECS.g3t07 = { // Where's / May I
+  items: [
+    {type:'where', place:'kitchen'},{type:'where', place:'bedroom'},{type:'where', place:'bathroom'},{type:'where', place:'garden'},
+    {type:'may', act:'go out'},{type:'may', act:'open the door'},{type:'may', act:'use your pen'},{type:'may', act:'sit here'}
+  ],
+  build(it, form){
+    if(it.type==='where'){
+      if(form==='aff') return { full:`The ${it.place} is here.`, blankPrompt:`The ${it.place} ___ here.`, blankAnswer:'is',
+        wrong:['are','am','be'], tokens:['The',it.place,'is','here.'], explain:`The ${it.place} <b>is</b> here.` };
+      if(form==='int') return { full:`Where is the ${it.place}?`, blankPrompt:`___ is the ${it.place}?`, blankAnswer:'Where',
+        wrong:['What','Who','How'], tokens:['Where','is','the',`${it.place}?`], explain:`Hỏi vị trí: <b>Where's...?</b>` };
+      return { full:`The ${it.place} isn't here.`, blankPrompt:`The ${it.place} ___ here.`, blankAnswer:"isn't",
+        accepted:["isn't",'is not'], wrong:["aren't",'not is',"don't"], tokens:['The',it.place,"isn't",'here.'],
+        errorVersion:`The ${it.place} not is here.`, explain:`Phủ định: The ${it.place} <b>isn't</b> here.` };
+    }
+    if(form==='aff') return { full:`You can ${it.act}.`, blankPrompt:`You ___ ${it.act}.`, blankAnswer:'can',
+      wrong:['may not',"can't","don't"], tokens:['You','can',`${it.act}.`], explain:`Cho phép: You can ${it.act}.` };
+    if(form==='int') return { full:`May I ${it.act}?`, blankPrompt:`___ I ${it.act}?`, blankAnswer:'May',
+      wrong:['Do','Are','Is'], tokens:['May','I',`${it.act}?`], explain:`Xin phép: <b>May I...?</b>` };
+    return { full:`You can't ${it.act} now.`, blankPrompt:`You ___ ${it.act} now.`, blankAnswer:"can't",
+      accepted:["can't",'cannot'], wrong:['can',"don't","isn't"], tokens:['You',"can't",it.act,'now.'],
+      errorVersion:`You not can ${it.act} now.`, explain:`Phủ định: You <b>can't</b> ${it.act} now.` };
+  }
+};
+
+SPECS.g3t08 = { // Would you like ...?
+  items: ['tea','juice','milk','water','coffee','lemonade'],
+  build(d, form){
+    if(form==='aff') return { full:`I'd like some ${d}.`, blankPrompt:`I'd ___ some ${d}.`, blankAnswer:'like',
+      wrong:['likes','liked','liking'], tokens:["I'd",'like','some',`${d}.`], explain:`I'd like some ${d}.` };
+    if(form==='int') return { full:`Would you like some ${d}?`, blankPrompt:`___ you like some ${d}?`, blankAnswer:'Would',
+      wrong:['Do','Are','Can'], tokens:['Would','you','like','some',`${d}?`], explain:`Mời: <b>Would you like...?</b>` };
+    return { full:`I don't want any ${d}.`, blankPrompt:`I ___ want any ${d}.`, blankAnswer:"don't",
+      accepted:["don't",'do not'], wrong:["doesn't",'not',"isn't"], tokens:['I',"don't",'want','any',`${d}.`],
+      errorVersion:`I not want any ${d}.`, explain:`Từ chối: I <b>don't</b> want any ${d}.` };
+  }
+};
+
+/* ---------------- LỚP 4 ---------------- */
+
+SPECS.g4t01 = { // Where from / Job
+  compound: true,
+  items: [
+    {type:'from', c:'Thailand'},{type:'from', c:'Viet Nam'},{type:'from', c:'Japan'},{type:'from', c:'Canada'},
+    {type:'job', j:'doctor'},{type:'job', j:'teacher'},{type:'job', j:'engineer'},{type:'job', j:'farmer'}
+  ],
+  build(it, form){
+    if(form==='compound'){
+      if(it.type==='from'){
+        return buildCompoundVariant(`I'm from ${it.c}`, 'but', `I live in Viet Nam now`,
+          `diễn tả sự tương phản giữa quê quán và nơi đang sống.`);
+      }
+      const wantMap = { doctor:'help sick people', teacher:'help students learn', engineer:'build new things', farmer:'grow rice and vegetables' };
+      return buildCompoundVariant(`He is ${artFor(it.j)} ${it.j}`, 'because', `he wants to ${wantMap[it.j]}`,
+        `giải thích lý do chọn nghề.`);
+    }
+    if(it.type==='from'){
+      if(form==='aff') return { full:`I'm from ${it.c}.`, blankPrompt:`I'm ___ ${it.c}.`, blankAnswer:'from',
+        wrong:['in','at','to'], tokens:["I'm",'from',`${it.c}.`], explain:`I'm <b>from</b> ${it.c}.` };
+      if(form==='int') return { full:'Where are you from?', blankPrompt:'___ are you from?', blankAnswer:'Where',
+        wrong:['What','How','Who'], tokens:['Where','are','you','from?'], explain:`Hỏi quê quán: <b>Where are you from?</b>` };
+      return { full:`I'm not from ${it.c}.`, blankPrompt:`I ___ from ${it.c}.`, blankAnswer:"'m not",
+        accepted:["'m not",'am not'], wrong:['not am',"isn't","don't"], tokens:["I'm not",'from',`${it.c}.`],
+        errorVersion:`I not am from ${it.c}.`, explain:`Phủ định: I <b>'m not</b> from ${it.c}.` };
+    }
+    const others = ['doctor','teacher','engineer','farmer'].filter(x=>x!==it.j);
+    const art = artFor(it.j);
+    if(form==='aff') return { full:`He's ${art} ${it.j}.`, blankPrompt:`He's ${art} ___.`, blankAnswer:it.j,
+      wrong:others, tokens:["He's",art,`${it.j}.`], explain:`He's ${art} <b>${it.j}</b>.` };
+    if(form==='int') return { full:'What does he do?', blankPrompt:'What ___ he do?', blankAnswer:'does',
+      wrong:['do','is','are'], tokens:['What','does','he','do?'], explain:`Với he/she dùng <b>does</b>.` };
+    return { full:`He doesn't work as ${art} ${it.j}.`, blankPrompt:`He ___ work as ${art} ${it.j}.`, blankAnswer:"doesn't",
+      accepted:["doesn't",'does not'], wrong:["don't",'not',"isn't"], tokens:['He',"doesn't",'work','as',art,`${it.j}.`],
+      errorVersion:`He don't work as ${art} ${it.j}.`, explain:`Phủ định với he/she: <b>doesn't</b> + V.` };
+  }
+};
+
+SPECS.g4t02 = { // What time / Daily routines
+  compound: true,
+  items: [
+    {act:'get up',time:'6:30'},{act:'go to school',time:'7:00'},{act:'have lunch',time:'11:30'},
+    {act:'go to bed',time:'9:00'},{act:'do homework',time:'5:00'},{act:'watch TV',time:'8:00'}
+  ],
+  build(it, form){
+    if(form==='compound'){
+      const map = {
+        'get up': {conj:'because', c2:"I don't want to be late for school"},
+        'go to school': {conj:'so', c2:'I meet my friends there'},
+        'have lunch': {conj:'and', c2:'then I take a short rest'},
+        'go to bed': {conj:'because', c2:'I feel tired'},
+        'do homework': {conj:'so', c2:'I understand the lessons better'},
+        'watch TV': {conj:'and', c2:'I relax after school'}
+      };
+      const m = map[it.act];
+      return buildCompoundVariant(`I ${it.act} at ${it.time}`, m.conj, m.c2,
+        `nối 2 mệnh đề để giải thích thói quen hàng ngày.`);
+    }
+    if(form==='aff') return { full:`I ${it.act} at ${it.time}.`, blankPrompt:`I ${it.act} ___ ${it.time}.`, blankAnswer:'at',
+      wrong:['on','in','to'], tokens:['I',it.act,'at',`${it.time}.`], explain:`Giờ cụ thể dùng <b>at</b>.` };
+    if(form==='int') return { full:`What time do you ${it.act}?`, blankPrompt:`What ___ do you ${it.act}?`, blankAnswer:'time',
+      wrong:['day','date','hour'], tokens:['What','time','do','you',`${it.act}?`], explain:`Hỏi giờ: <b>What time...?</b>` };
+    return { full:`I don't ${it.act} at ${it.time}.`, blankPrompt:`I ___ ${it.act} at ${it.time}.`, blankAnswer:"don't",
+      accepted:["don't",'do not'], wrong:["doesn't",'not',"isn't"], tokens:['I',"don't",it.act,'at',`${it.time}.`],
+      errorVersion:`I not ${it.act} at ${it.time}.`, explain:`Phủ định: I <b>don't</b> ${it.act}...` };
+  }
+};
+
+SPECS.g4t03 = { // Can / Favourite subject
+  compound: true,
+  items: [
+    {type:'can', act:'play the guitar'},{type:'can', act:'play the piano'},{type:'can', act:'swim'},{type:'can', act:'dance'},
+    {type:'subj', s:'Science'},{type:'subj', s:'Math'},{type:'subj', s:'English'},{type:'subj', s:'Art'}
+  ],
+  build(it, form){
+    if(form==='compound'){
+      if(it.type==='can'){
+        const secondAct = it.act==='sing' ? 'dance' : 'sing';
+        return buildCompoundVariant(`He can ${it.act}`, 'but', `he can't ${secondAct}`,
+          `tương phản giữa 2 khả năng khác nhau.`);
+      }
+      return buildCompoundVariant(`My favourite subject is ${it.s}`, 'because', `it's interesting`,
+        `giải thích lý do yêu thích môn học.`);
+    }
+    if(it.type==='can'){
+      if(form==='aff') return { full:`He can ${it.act}.`, blankPrompt:`He ___ ${it.act}.`, blankAnswer:'can',
+        wrong:["can't",'do','is'], tokens:['He','can',`${it.act}.`], explain:`He can ${it.act}.` };
+      if(form==='int') return { full:`Can he ${it.act}?`, blankPrompt:`___ he ${it.act}?`, blankAnswer:'Can',
+        wrong:['Does','Is','Do'], tokens:['Can','he',`${it.act}?`], explain:`Hỏi khả năng: <b>Can he...?</b>` };
+      return { full:`He can't ${it.act}.`, blankPrompt:`He ___ ${it.act}.`, blankAnswer:"can't",
+        accepted:["can't",'cannot'], wrong:['can',"doesn't","isn't"], tokens:['He',"can't",`${it.act}.`],
+        errorVersion:`He can't to ${it.act}.`, explain:`Sau can't luôn là V nguyên mẫu.` };
+    }
+    const others = ['Science','Math','English','Art'].filter(x=>x!==it.s);
+    if(form==='aff') return { full:`My favourite subject is ${it.s}.`, blankPrompt:`My favourite subject ___ ${it.s}.`, blankAnswer:'is',
+      wrong:['am','are','be'], tokens:['My','favourite','subject','is',`${it.s}.`], explain:`My favourite subject is ${it.s}.` };
+    if(form==='int') return { full:"What's your favourite subject?", blankPrompt:"What's your favourite ___?", blankAnswer:'subject',
+      wrong:['hobby','job','colour'], tokens:["What's",'your','favourite','subject?'], explain:`Hỏi: <b>What's your favourite subject?</b>` };
+    return { full:`${it.s} isn't my favourite subject.`, blankPrompt:`${it.s} ___ my favourite subject.`, blankAnswer:"isn't",
+      accepted:["isn't",'is not'], wrong:["aren't","don't",'not is'], tokens:[it.s,"isn't",'my','favourite','subject.'],
+      errorVersion:`${it.s} not is my favourite subject.`, explain:`Phủ định: ${it.s} <b>isn't</b> my favourite subject.` };
+  }
+};
+
+SPECS.g4t04 = { // Was / Were
+  compound: true,
+  items: [
+    {s:'I',place:'Japan',prep:'in',be:'was'},{s:'We',place:'the zoo',prep:'at',be:'were'},
+    {s:'She',place:'Ha Noi',prep:'in',be:'was'},{s:'They',place:'the beach',prep:'at',be:'were'},
+    {s:'He',place:'school',prep:'at',be:'was'},{s:'You',place:'home',prep:'at',be:'were'}
+  ],
+  build(it, form){
+    if(form==='compound'){
+      const sMid = subjLower(it.s);
+      return buildCompoundVariant(`${it.s} ${it.be} ${it.prep} ${it.place}`, 'so', `${sMid} took a lot of photos`,
+        `nối mệnh đề quá khứ với kết quả bằng "so".`);
+    }
+    if(form==='aff') return { full:`${it.s} ${it.be} ${it.prep} ${it.place}.`, blankPrompt:`${it.s} ___ ${it.prep} ${it.place}.`, blankAnswer:it.be,
+      wrong:['was','were','is','are'].filter(x=>x!==it.be), tokens:[it.s,it.be,it.prep,`${it.place}.`],
+      errorVersion:`${it.s} ${it.be==='was'?'were':'was'} ${it.prep} ${it.place}.`,
+      explain:`I/He/She/It + <b>was</b>; You/We/They + <b>were</b>.` };
+    if(form==='int'){
+      const Be = cap(it.be);
+      const sMid = subjLower(it.s);
+      return { full:`${Be} ${sMid} ${it.prep} ${it.place}?`, blankPrompt:`___ ${sMid} ${it.prep} ${it.place}?`, blankAnswer:Be,
+        wrong:['Was','Were','Did','Is'].filter(x=>x!==Be), tokens:[Be,sMid,it.prep,`${it.place}?`],
+        explain:`Câu hỏi: Was/Were + S + ...? → <b>${Be} ${sMid}...?</b>` };
+    }
+    return { full:`${it.s} ${it.be} not ${it.prep} ${it.place}.`, blankPrompt:`${it.s} ${it.be} ___ ${it.prep} ${it.place}.`, blankAnswer:'not',
+      wrong:['no',"don't","isn't"], tokens:[it.s,it.be,'not',it.prep,`${it.place}.`],
+      errorVersion:`${it.s} not ${it.be} ${it.prep} ${it.place}.`, explain:`Phủ định: S + was/were + <b>not</b>.` };
+  }
+};
+
+SPECS.g4t05 = { // How many / Where's
+  compound: true,
+  items: [
+    {type:'many', n:'classrooms', num:20},{type:'many', n:'books', num:30},{type:'many', n:'students', num:25},{type:'many', n:'teachers', num:15},
+    {type:'where', place:'library'},{type:'where', place:'gym'},{type:'where', place:'canteen'},{type:'where', place:'playground'}
+  ],
+  build(it, form){
+    if(form==='compound'){
+      if(it.type==='many'){
+        return buildCompoundVariant(`There are ${it.num} ${it.n}`, 'so', `the school is big`,
+          `nối số lượng với kết quả/nhận xét.`);
+      }
+      return buildCompoundVariant(`The ${it.place} is over there`, 'but', `I can't see it now`,
+        `tương phản giữa vị trí và khả năng nhìn thấy.`);
+    }
+    if(it.type==='many'){
+      if(form==='aff') return { full:`There are ${it.num} ${it.n}.`, blankPrompt:`There ___ ${it.num} ${it.n}.`, blankAnswer:'are',
+        wrong:['is','am','be'], tokens:['There','are',`${it.num}`,`${it.n}.`], explain:`Danh từ số nhiều → <b>There are</b>.` };
+      if(form==='int') return { full:`How many ${it.n} are there?`, blankPrompt:`How ___ ${it.n} are there?`, blankAnswer:'many',
+        wrong:['much','many more','some'], tokens:['How','many',it.n,'are','there?'], explain:`Hỏi số lượng: <b>How many...are there?</b>` };
+      return { full:`There aren't ${it.num} ${it.n}.`, blankPrompt:`There ___ ${it.num} ${it.n}.`, blankAnswer:"aren't",
+        accepted:["aren't",'are not'], wrong:["isn't",'not are',"don't"], tokens:['There',"aren't",`${it.num}`,`${it.n}.`],
+        errorVersion:`There not are ${it.num} ${it.n}.`, explain:`Phủ định: There <b>aren't</b>...` };
+    }
+    if(form==='aff') return { full:`The ${it.place} is over there.`, blankPrompt:`The ${it.place} ___ over there.`, blankAnswer:'is',
+      wrong:['are','am','be'], tokens:['The',it.place,'is','over','there.'], explain:`The ${it.place} <b>is</b> over there.` };
+    if(form==='int') return { full:`Where is the ${it.place}?`, blankPrompt:`___ is the ${it.place}?`, blankAnswer:'Where',
+      wrong:['What','Who','How'], tokens:['Where','is','the',`${it.place}?`], explain:`Hỏi vị trí: <b>Where's...?</b>` };
+    return { full:`The ${it.place} isn't over there.`, blankPrompt:`The ${it.place} ___ over there.`, blankAnswer:"isn't",
+      accepted:["isn't",'is not'], wrong:["aren't",'not is',"don't"], tokens:['The',it.place,"isn't",'over','there.'],
+      errorVersion:`The ${it.place} not is over there.`, explain:`Phủ định: The ${it.place} <b>isn't</b> over there.` };
+  }
+};
+
+/* ---------------- LỚP 5 ---------------- */
+
+SPECS.g5t01 = { // Personal information
+  compound: true,
+  items: ['Hanoi','Ho Chi Minh City','Da Nang','Hue','Can Tho','Hai Phong'],
+  build(city, form){
+    if(form==='compound'){
+      return buildCompoundVariant(`I live in ${city}`, 'because', `my parents work there`,
+        `giải thích lý do sống ở nơi đó.`);
+    }
+    if(form==='aff') return { full:`I live in ${city}.`, blankPrompt:`I ___ in ${city}.`, blankAnswer:'live',
+      wrong:['lives','living','lived'], tokens:['I','live','in',`${city}.`], explain:`I <b>live</b> in ${city}.` };
+    if(form==='int') return { full:'Where do you live?', blankPrompt:'___ do you live?', blankAnswer:'Where',
+      wrong:['What','How','Who'], tokens:['Where','do','you','live?'], explain:`Hỏi nơi ở: <b>Where do you live?</b>` };
+    return { full:`I don't live in ${city}.`, blankPrompt:`I ___ live in ${city}.`, blankAnswer:"don't",
+      accepted:["don't",'do not'], wrong:["doesn't",'not',"isn't"], tokens:['I',"don't",'live','in',`${city}.`],
+      errorVersion:`I not live in ${city}.`, explain:`Phủ định: I <b>don't</b> live in ${city}.` };
+  }
+};
+
+SPECS.g5t02 = { // Do you live / Nationality
+  compound: true,
+  items: ['Japanese','American','Vietnamese','Korean','Chinese','French'],
+  build(nat, form){
+    const others = ['Japanese','American','Vietnamese','Korean','Chinese','French'].filter(x=>x!==nat);
+    if(form==='compound'){
+      return buildCompoundVariant(`She is ${nat}`, 'but', `she speaks English very well`,
+        `tương phản giữa quốc tịch và khả năng ngôn ngữ.`);
+    }
+    if(form==='aff') return { full:`She is ${nat}.`, blankPrompt:'She is ___.', blankAnswer:nat,
+      wrong:shuffle(others).slice(0,3), tokens:['She','is',`${nat}.`], explain:`She is <b>${nat}</b>.` };
+    if(form==='int') return { full:'What nationality is she?', blankPrompt:'What ___ is she?', blankAnswer:'nationality',
+      wrong:['job','name','age'], tokens:['What','nationality','is','she?'], explain:`Hỏi quốc tịch: <b>What nationality is she?</b>` };
+    return { full:`She isn't ${nat}.`, blankPrompt:`She ___ ${nat}.`, blankAnswer:"isn't",
+      accepted:["isn't",'is not'], wrong:["aren't","don't",'not is'], tokens:['She',"isn't",`${nat}.`],
+      errorVersion:`She not is ${nat}.`, explain:`Phủ định: She <b>isn't</b> ${nat}.` };
+  }
+};
+
+SPECS.g5t03 = { // like + V-ing / would like to be
+  compound: true,
+  items: [
+    {type:'like', act:'reading books'},{type:'like', act:'playing football'},{type:'like', act:'watching TV'},{type:'like', act:'listening to music'},
+    {type:'want', j:'doctor'},{type:'want', j:'teacher'},{type:'want', j:'engineer'},{type:'want', j:'singer'}
+  ],
+  build(it, form){
+    if(form==='compound'){
+      if(it.type==='like'){
+        return buildCompoundVariant(`I like ${it.act}`, 'because', `it's fun`,
+          `giải thích lý do thích hoạt động này.`);
+      }
+      return buildCompoundVariant(`I'd like to be ${artFor(it.j)} ${it.j}`, 'so', `I study hard`,
+        `nối ước mơ nghề nghiệp với hành động để đạt được nó.`);
+    }
+    if(it.type==='like'){
+      const others = ['reading books','playing football','watching TV','listening to music'].filter(x=>x!==it.act);
+      if(form==='aff') return { full:`I like ${it.act}.`, blankPrompt:'I like ___.', blankAnswer:it.act,
+        wrong:others, tokens:['I','like',`${it.act}.`], explain:`I like ${it.act}.` };
+      if(form==='int') return { full:'What do you like doing?', blankPrompt:'What do you like ___?', blankAnswer:'doing',
+        wrong:['do','done','did'], tokens:['What','do','you','like','doing?'], explain:`Hỏi sở thích: <b>What do you like doing?</b>` };
+      return { full:`I don't like ${it.act}.`, blankPrompt:`I ___ like ${it.act}.`, blankAnswer:"don't",
+        accepted:["don't",'do not'], wrong:["doesn't",'not',"isn't"], tokens:['I',"don't",'like',`${it.act}.`],
+        errorVersion:`I not like ${it.act}.`, explain:`Phủ định: I <b>don't</b> like ${it.act}.` };
+    }
+    const others = ['doctor','teacher','engineer','singer'].filter(x=>x!==it.j);
+    const art2 = artFor(it.j);
+    if(form==='aff') return { full:`I'd like to be ${art2} ${it.j}.`, blankPrompt:`I'd like to ___ ${art2} ${it.j}.`, blankAnswer:'be',
+      wrong:['being','been','is'], tokens:["I'd",'like','to','be',art2,`${it.j}.`], explain:`would like to + V: I'd like to <b>be</b>...` };
+    if(form==='int') return { full:'What would you like to be?', blankPrompt:'What ___ you like to be?', blankAnswer:'would',
+      wrong:['do','are','will'], tokens:['What','would','you','like','to','be?'], explain:`Hỏi ước mơ: <b>What would you like to be?</b>` };
+    return { full:`I wouldn't like to be ${art2} ${it.j}.`, blankPrompt:`I ___ like to be ${art2} ${it.j}.`, blankAnswer:"wouldn't",
+      accepted:["wouldn't",'would not'], wrong:["don't",'not',"isn't"], tokens:['I',"wouldn't",'like','to','be',art2,`${it.j}.`],
+      errorVersion:`I not would like to be ${art2} ${it.j}.`, explain:`Phủ định: I <b>wouldn't</b> like to be...` };
+  }
+};
+
+SPECS.g5t04 = { // Past Simple
+  compound: true,
+  items: [
+    {type:'be', s:'You', place:'the park', be:'were'},{type:'be', s:'I', place:'home', be:'was'},{type:'be', s:'She', place:'school', be:'was'},
+    {type:'v', s:'We', v:'play', ved:'played', obj:'football'},{type:'v', s:'They', v:'watch', ved:'watched', obj:'a movie'},{type:'v', s:'He', v:'visit', ved:'visited', obj:'his grandma'}
+  ],
+  build(it, form){
+    if(form==='compound'){
+      if(it.type==='be'){
+        const sMid = subjLower(it.s);
+        return buildCompoundVariant(`${it.s} ${it.be} at ${it.place} yesterday`, 'and', `${sMid} had a good time`,
+          `nối mệnh đề quá khứ với "and" để thêm thông tin.`);
+      }
+      return buildCompoundVariant(`${it.s} ${it.ved} ${it.obj} yesterday`, 'because', `it was fun`,
+        `giải thích lý do cho hành động quá khứ.`);
+    }
+    if(it.type==='be'){
+      if(form==='aff') return { full:`${it.s} ${it.be} at ${it.place} yesterday.`, blankPrompt:`${it.s} ___ at ${it.place} yesterday.`, blankAnswer:it.be,
+        wrong:['was','were','is','are'].filter(x=>x!==it.be), tokens:[it.s,it.be,'at',it.place,'yesterday.'],
+        errorVersion:`${it.s} ${it.be==='was'?'were':'was'} at ${it.place} yesterday.`, explain:`I/She + was; You/We/They + were.` };
+      if(form==='int'){
+        const Be = cap(it.be);
+        const sMid = subjLower(it.s);
+        return { full:`${Be} ${sMid} at ${it.place} yesterday?`, blankPrompt:`___ ${sMid} at ${it.place} yesterday?`, blankAnswer:Be,
+          wrong:['Was','Were','Did','Is'].filter(x=>x!==Be), tokens:[Be,sMid,'at',it.place,'yesterday?'], explain:`Câu hỏi: Was/Were + S...?` };
+      }
+      return { full:`${it.s} ${it.be} not at ${it.place} yesterday.`, blankPrompt:`${it.s} ${it.be} ___ at ${it.place} yesterday.`, blankAnswer:'not',
+        wrong:['no',"don't","isn't"], tokens:[it.s,it.be,'not','at',it.place,'yesterday.'],
+        errorVersion:`${it.s} not ${it.be} at ${it.place} yesterday.`, explain:`Phủ định: S + was/were + <b>not</b>.` };
+    }
+    const sLow = it.s.toLowerCase();
+    if(form==='aff') return { full:`${it.s} ${it.ved} ${it.obj} yesterday.`, blankPrompt:`${it.s} ___ (${it.v}) ${it.obj} yesterday.`, blankAnswer:it.ved,
+      wrong:[it.v, `${it.v}ing`, `${it.v}s`], tokens:[it.s,it.ved,it.obj,'yesterday.'],
+      errorVersion:`${it.s} ${it.v} ${it.obj} yesterday.`, explain:`Quá khứ đơn: S + V-ed → <b>${it.ved}</b>.` };
+    if(form==='int') return { full:`Did ${sLow} ${it.v} ${it.obj} yesterday?`, blankPrompt:`___ ${sLow} ${it.v} ${it.obj} yesterday?`, blankAnswer:'Did',
+      wrong:['Do','Was','Were'], tokens:['Did',sLow,it.v,it.obj,'yesterday?'], explain:`Câu hỏi quá khứ: <b>Did</b> + S + V (nguyên mẫu)?` };
+    return { full:`${it.s} didn't ${it.v} ${it.obj} yesterday.`, blankPrompt:`${it.s} ___ ${it.v} ${it.obj} yesterday.`, blankAnswer:"didn't",
+      accepted:["didn't",'did not'], wrong:["doesn't","don't","wasn't"], tokens:[it.s,"didn't",it.v,it.obj,'yesterday.'],
+      errorVersion:`${it.s} didn't ${it.ved} ${it.obj} yesterday.`, explain:`Sau didn't dùng V nguyên mẫu, không "-ed".` };
+  }
+};
+
+SPECS.g5t05 = { // Will / Should
+  compound: true,
+  items: [
+    {type:'will', act:'visit my relatives'},{type:'will', act:'go to the market'},{type:'will', act:'watch TV tonight'},{type:'will', act:'do my homework'},
+    {type:'should', advice:'see a doctor', negAdvice:'stay up late'},
+    {type:'should', advice:'drink more water', negAdvice:'skip breakfast'},
+    {type:'should', advice:'go to bed early', negAdvice:'watch TV all night'},
+    {type:'should', advice:'study harder', negAdvice:'waste time'}
+  ],
+  build(it, form){
+    if(form==='compound'){
+      if(it.type==='will'){
+        return buildCompoundVariant(`I will ${it.act}`, 'so', `I need to get ready`,
+          `nối kế hoạch tương lai với việc cần chuẩn bị.`);
+      }
+      const reasonMap = {
+        'see a doctor': "you don't feel well",
+        'drink more water': "it's good for your health",
+        'go to bed early': 'you will feel better tomorrow',
+        'study harder': 'you want good grades'
+      };
+      return buildCompoundVariant(`You should ${it.advice}`, 'because', reasonMap[it.advice],
+        `giải thích lý do cho lời khuyên.`);
+    }
+    if(it.type==='will'){
+      if(form==='aff') return { full:`I will ${it.act}.`, blankPrompt:`I ___ ${it.act}.`, blankAnswer:'will',
+        wrong:['would','can','am'], tokens:['I','will',`${it.act}.`], explain:`Tương lai: I <b>will</b> ${it.act}.` };
+      if(form==='int') return { full:`Will you ${it.act}?`, blankPrompt:`___ you ${it.act}?`, blankAnswer:'Will',
+        wrong:['Do','Are','Can'], tokens:['Will','you',`${it.act}?`], explain:`Hỏi: <b>Will you...?</b>` };
+      return { full:`I won't ${it.act}.`, blankPrompt:`I ___ ${it.act}.`, blankAnswer:"won't",
+        accepted:["won't",'will not'], wrong:["don't",'not',"isn't"], tokens:['I',"won't",`${it.act}.`],
+        errorVersion:`I will not to ${it.act}.`, explain:`Phủ định: I <b>won't</b> ${it.act} (không "to").` };
+    }
+    if(form==='aff') return { full:`You should ${it.advice}.`, blankPrompt:`You ___ ${it.advice}.`, blankAnswer:'should',
+      wrong:['must','can','will'], tokens:['You','should',`${it.advice}.`], explain:`Lời khuyên: You <b>should</b> ${it.advice}.` };
+    if(form==='int') return { full:"What's the matter?", blankPrompt:"What's the ___?", blankAnswer:'matter',
+      wrong:['problem','matters','wrong'], tokens:["What's",'the','matter?'], explain:`Hỏi thăm: <b>What's the matter?</b>` };
+    return { full:`You shouldn't ${it.negAdvice}.`, blankPrompt:`You ___ ${it.negAdvice}.`, blankAnswer:"shouldn't",
+      accepted:["shouldn't",'should not'], wrong:['should',"can't","don't"], tokens:['You',"shouldn't",`${it.negAdvice}.`],
+      errorVersion:`You should not to ${it.negAdvice}.`, explain:`Phủ định lời khuyên: You <b>shouldn't</b> ${it.negAdvice}.` };
+  }
+};
+
+SPECS.g5t06 = { // Weather / Transport
+  compound: true,
+  items: [
+    {type:'weather', season:'winter', w:'cold'},{type:'weather', season:'summer', w:'hot'},{type:'weather', season:'spring', w:'warm'},{type:'weather', season:'autumn', w:'cool'},
+    {type:'transport', place:'museum', by:'bus'},{type:'transport', place:'zoo', by:'taxi'},{type:'transport', place:'airport', by:'car'},{type:'transport', place:'market', by:'bike'}
+  ],
+  build(it, form){
+    if(form==='compound'){
+      if(it.type==='weather'){
+        const clothesMap = { winter:'a coat', summer:'a hat', spring:'a light jacket', autumn:'a scarf' };
+        return buildCompoundVariant(`It is ${it.w} in ${it.season}`, 'so', `I wear ${clothesMap[it.season]}`,
+          `nối thời tiết với hành động phù hợp.`);
+      }
+      return buildCompoundVariant(`You can get there by ${it.by}`, 'and', `it's convenient`,
+        `bổ sung thông tin về phương tiện.`);
+    }
+    if(it.type==='weather'){
+      const others = ['cold','hot','warm','cool'].filter(x=>x!==it.w);
+      if(form==='aff') return { full:`It is ${it.w} in ${it.season}.`, blankPrompt:`It's ___ in ${it.season}.`, blankAnswer:it.w,
+        wrong:others, tokens:['It','is',it.w,'in',`${it.season}.`], explain:`It's <b>${it.w}</b> in ${it.season}.` };
+      if(form==='int') return { full:`How is the weather in ${it.season}?`, blankPrompt:`___ is the weather in ${it.season}?`, blankAnswer:'How',
+        wrong:['What','Who','Where'], tokens:['How','is','the','weather','in',`${it.season}?`], explain:`Hỏi thời tiết: <b>How's the weather...?</b>` };
+      return { full:`It isn't ${it.w} in ${it.season}.`, blankPrompt:`It ___ ${it.w} in ${it.season}.`, blankAnswer:"isn't",
+        accepted:["isn't",'is not'], wrong:["aren't","don't",'not is'], tokens:['It',"isn't",it.w,'in',`${it.season}.`],
+        errorVersion:`It not is ${it.w} in ${it.season}.`, explain:`Phủ định: It <b>isn't</b> ${it.w}...` };
+    }
+    if(form==='aff') return { full:`You can get there by ${it.by}.`, blankPrompt:`You can get there ___ ${it.by}.`, blankAnswer:'by',
+      wrong:['in','on','at'], tokens:['You','can','get','there','by',`${it.by}.`], explain:`Phương tiện dùng <b>by</b> + phương tiện.` };
+    if(form==='int') return { full:`How can I get to the ${it.place}?`, blankPrompt:`How can I get ___ the ${it.place}?`, blankAnswer:'to',
+      wrong:['at','in','for'], tokens:['How','can','I','get','to','the',`${it.place}?`], explain:`Hỏi đường: <b>How can I get to...?</b>` };
+    return { full:`You can't get there by ${it.by}.`, blankPrompt:`You ___ get there by ${it.by}.`, blankAnswer:"can't",
+      accepted:["can't",'cannot'], wrong:['can',"don't","isn't"], tokens:['You',"can't",'get','there','by',`${it.by}.`],
+      errorVersion:`You not can get there by ${it.by}.`, explain:`Phủ định: You <b>can't</b> get there by ${it.by}.` };
+  }
+};
+
+/* ---------------- Đăng ký GENERATORS ---------------- */
+const GENERATORS = {};
+Object.keys(SPECS).forEach(id=>{
+  GENERATORS[id] = function(n){ return genFromSpec(id, SPECS[id], n); };
+});
+// g3t06, g4t06 dùng chung generator với g2t01 (hiện tại tiếp diễn) như bản gốc
+GENERATORS.g3t06 = function(n){ return genFromSpec('g3t06', SPECS.g2t01, n); };
+GENERATORS.g4t06 = function(n){ return genFromSpec('g4t06', SPECS.g2t01, n); };
+
+function generateForTopic(topicId, n){
+  if(GENERATORS[topicId]) return GENERATORS[topicId](n);
+  return [];
+}
+
+const _usedPromptsBySelection = {};
+function _selectionKey(topicIds){ return [...topicIds].sort().join('|'); }
+
+function buildQuiz(topicIds, totalCount){
+  if(!topicIds.length) return [];
+  const key = _selectionKey(topicIds);
+  if(!_usedPromptsBySelection[key]){
+    _usedPromptsBySelection[key] = { basic:new Set(), advanced:new Set(), thinking:new Set() };
+  }
+  const usedByLevel = _usedPromptsBySelection[key];
+
+  const per = Math.ceil(totalCount / topicIds.length);
+  let all = [];
+  const seenPrompts = new Set();
+  topicIds.forEach(id => {
+    const generated = generateForTopic(id, Math.max(per*4, 16));
+    generated.forEach(q=>{
+      if(!seenPrompts.has(q.prompt)){
+        seenPrompts.add(q.prompt);
+        all.push(q);
+      }
+    });
+  });
+  all = shuffle(all);
+
+  const order = ['basic','advanced','thinking'];
+  const byLevel = {basic:[], advanced:[], thinking:[]};
+  all.forEach(q=>{ (byLevel[q.level] || byLevel.basic).push(q); });
+
+  // Chống lặp ĐỘC LẬP theo từng mức độ: nếu mức nào đã dùng gần hết pool riêng
+  // của nó thì CHỈ reset mức đó để quay vòng, không bị các mức khác (thường có
+  // nhiều tổ hợp câu hơn hẳn, đặc biệt dạng "sắp xếp câu") che khuất mãi mãi.
+  const perLevelQuota = Math.max(1, Math.ceil(totalCount/3));
+  order.forEach(lvl=>{
+    const usedSet = usedByLevel[lvl];
+    const freshCount = byLevel[lvl].filter(q=>!usedSet.has(q.prompt)).length;
+    if(freshCount < Math.min(perLevelQuota, byLevel[lvl].length)){
+      usedSet.clear();
+    }
+    const fresh = byLevel[lvl].filter(q=>!usedSet.has(q.prompt));
+    const stale = byLevel[lvl].filter(q=>usedSet.has(q.prompt));
+    byLevel[lvl] = fresh.concat(stale); // ưu tiên câu mới, bù câu cũ nếu thiếu
+  });
+
+  // Chọn câu luân phiên đều giữa 3 mức độ (round-robin) để KHÔNG bị mất
+  // advanced/thinking (hoặc basic) khi 1 mức có sẵn quá nhiều lựa chọn hơn.
+  const idx = {basic:0, advanced:0, thinking:0};
+  const selected = [];
+  while(selected.length < totalCount){
+    let addedAny = false;
+    for(const lvl of order){
+      if(selected.length >= totalCount) break;
+      if(idx[lvl] < byLevel[lvl].length){
+        selected.push(byLevel[lvl][idx[lvl]++]);
+        addedAny = true;
+      }
+    }
+    if(!addedAny) break; // đã dùng hết cả 3 mức, không đủ câu để lấp đầy totalCount
+  }
+  // Sắp xếp lại để hiển thị mạch lạc: cơ bản → nâng cao → tư duy
+  const rank = {basic:0, advanced:1, thinking:2};
+  selected.sort((a,b)=>(rank[a.level]??3)-(rank[b.level]??3));
+  selected.forEach(q=>usedByLevel[q.level].add(q.prompt));
+  return selected;
+}
+
+
+function normalizeAnswer(s){
+  return String(s??'').toLowerCase().replace(/[’‘]/g,"'").trim().replace(/\s+/g,' ').replace(/[.!?]+$/,'');
+}
+function isAnswerCorrect(userInput, q){
+  const norm = normalizeAnswer(userInput);
+  if(!norm) return false;
+  return (q.accepted||[q.answer]).some(a => normalizeAnswer(a)===norm);
+}
+
+/* ================= UI ================= */
+(function(){
+  const $ = (sel, el=document) => el.querySelector(sel);
+  const $$ = (sel, el=document) => Array.from(el.querySelectorAll(sel));
+
+  let currentGrade = 1;
+  function currentTopics(){ return GRADE_DATA[currentGrade].topics; }
+
+  $$('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      $$('.tab-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const tab = btn.dataset.tab;
+      $('#tabLesson').classList.toggle('hidden', tab!=='lesson');
+      $('#tabExercise').classList.toggle('hidden', tab!=='exercise');
+    });
+  });
+
+  $$('.grade-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const g = parseInt(btn.dataset.grade, 10);
+      currentGrade = g;
+      $$('.grade-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      $('#lessonPickerTitle').textContent = `${currentTopics().length} CHỦ ĐIỂM — ${GRADE_DATA[g].label}`;
+      $('#lessonPlaceholderText').textContent = GRADE_DATA[g].placeholder;
+      lessonPlaceholder.style.display = 'flex';
+      lessonBody.style.display = 'none';
+      buildLessonPicker();
+      selectedTopics.clear();
+      exercisePlaceholder.style.display = 'flex';
+      quizArea.style.display = 'none';
+      buildExercisePicker();
+      updateSelectedUI();
+    });
+  });
+
+  const lessonPickerBody = $('#lessonPickerBody');
+  const lessonPlaceholder = $('#lessonPlaceholder');
+  const lessonBody = $('#lessonBody');
+  const lessonCountTag = $('#lessonCountTag');
+
+  function groupByUnit(topics){
+    const map = {};
+    topics.forEach(t=>{
+      if(!map[t.unit]) map[t.unit] = { unit:t.unit, name:t.unitName, items:[] };
+      map[t.unit].items.push(t);
+    });
+    return Object.values(map).sort((a,b)=>a.unit-b.unit);
+  }
+
+  function buildLessonPicker(){
+    const topics = currentTopics();
+    const groups = groupByUnit(topics);
+    lessonPickerBody.innerHTML = groups.map(g=>`
+      <div class="unit-group">
+        <div class="unit-label"><span>Unit ${g.unit} — ${g.name}</span></div>
+        ${g.items.map(t=>`
+          <button class="topic-btn" data-id="${t.id}">
+            <span class="num">${(t.id.match(/(\d+)$/)||[,''])[1]}</span>
+            <span>${t.title} <span style="color:var(--text-dim); font-weight:400;">— ${t.vi}</span></span>
+          </button>`).join('')}
+      </div>`).join('');
+    lessonCountTag.textContent = `0/${topics.length}`;
+  }
+
+  function renderLesson(topicId){
+    const t = currentTopics().find(x=>x.id===topicId);
+    if(!t) return;
+    lessonPlaceholder.style.display = 'none';
+    lessonBody.style.display = 'block';
+    const structHtml = t.structure.map(block=>`
+      <div class="struct-block">
+        <div class="struct-label">${block.label}</div>
+        ${block.rows.map(r=>`<div class="struct-row"><span class="k">${r.k}</span><span class="f">${r.f}</span></div>`).join('')}
+      </div>`).join('');
+    const exHtml = t.examples.map(e=>`
+      <div class="lesson-example"><div class="en">${e.en}</div><div class="vi">${e.vi}</div></div>`).join('');
+    const sigHtml = t.signals.map(s=>`<span class="pill">${s}</span>`).join('');
+    lessonBody.innerHTML = `
+      <div class="lesson-head">
+        <div>
+          <div class="lesson-name">${t.title}</div>
+          <div class="lesson-vi">${t.vi} · Unit ${t.unit} — ${t.unitName}</div>
+        </div>
+        <span class="tag">LỚP ${currentGrade}</span>
+      </div>
+      <div class="lesson-usage"><b>Ý nghĩa &amp; cách dùng:</b> ${t.usage}</div>
+      <div class="section-tiny-title">Cấu trúc</div>
+      ${structHtml}
+      <div class="section-tiny-title">Ví dụ minh hoạ</div>
+      ${exHtml}
+      <div class="section-tiny-title">Dấu hiệu nhận biết</div>
+      <div class="lesson-signals">${sigHtml}</div>
+      <div class="section-tiny-title">Ghi nhớ &amp; mẹo tránh lỗi sai</div>
+      <div class="lesson-note">${t.note}</div>`;
+    $$('.topic-btn', lessonPickerBody).forEach(b=> b.classList.toggle('active', b.dataset.id===topicId));
+  }
+
+  lessonPickerBody.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.topic-btn');
+    if(!btn) return;
+    renderLesson(btn.dataset.id);
+    if(!btn.dataset.seen){
+      btn.dataset.seen = '1';
+      const seenCount = $$('.topic-btn[data-seen="1"]', lessonPickerBody).length;
+      lessonCountTag.textContent = `${seenCount}/${currentTopics().length}`;
+    }
+  });
+
+  buildLessonPicker();
+
+  /* Exercise tab */
+  const exercisePickerBody = $('#exercisePickerBody');
+  const exSelectedTag = $('#exSelectedTag');
+  const startBtn = $('#startBtn');
+  const exercisePlaceholder = $('#exercisePlaceholder');
+  const quizArea = $('#quizArea');
+  const quizTitle = $('#quizTitle');
+  const quizSubTitle = $('#quizSubTitle');
+  const qlist = $('#qlist');
+  const scoreBar = $('#scoreBar');
+  const countBtns = $('#countBtns');
+  const checkBtn = $('#checkBtn');
+  const reshuffleBtn = $('#reshuffleBtn');
+  const copyBtn = $('#copyBtn');
+  const exportWordBtn = $('#exportWordBtn');
+
+  let selectedTopics = new Set();
+  let quizCount = 10;
+  let currentQuiz = [];
+
+  function buildExercisePicker(){
+    const topics = currentTopics();
+    const groups = groupByUnit(topics);
+    exercisePickerBody.innerHTML = groups.map(g=>`
+      <div class="unit-group">
+        <div class="unit-label"><span>Unit ${g.unit} — ${g.name}</span></div>
+        ${g.items.map(t=>`
+          <label class="topic-btn" data-id="${t.id}" style="cursor:pointer;">
+            <input type="checkbox" class="topic-check" data-id="${t.id}">
+            <span>${t.title} <span style="color:var(--text-dim); font-weight:400;">— ${t.vi}</span></span>
+          </label>`).join('')}
+      </div>`).join('');
+    $('#selectAllBtn').textContent = `Chọn tất cả ${topics.length} chủ điểm`;
+  }
+  buildExercisePicker();
+
+  function updateSelectedUI(){
+    exSelectedTag.textContent = `${selectedTopics.size} đã chọn`;
+    $$('.topic-check', exercisePickerBody).forEach(cb=>{
+      cb.checked = selectedTopics.has(cb.dataset.id);
+      cb.closest('.topic-btn').classList.toggle('active', cb.checked);
+    });
+    startBtn.disabled = selectedTopics.size === 0;
+  }
+
+  exercisePickerBody.addEventListener('change', (e)=>{
+    const cb = e.target.closest('.topic-check');
+    if(!cb) return;
+    if(cb.checked) selectedTopics.add(cb.dataset.id);
+    else selectedTopics.delete(cb.dataset.id);
+    updateSelectedUI();
+  });
+
+  $('#selectAllBtn').addEventListener('click', ()=>{
+    currentTopics().forEach(t=>selectedTopics.add(t.id));
+    updateSelectedUI();
+  });
+  $('#clearAllBtn').addEventListener('click', ()=>{
+    selectedTopics.clear();
+    updateSelectedUI();
+  });
+
+  countBtns.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.cbtn');
+    if(!btn) return;
+    quizCount = parseInt(btn.dataset.count, 10);
+    $$('.cbtn', countBtns).forEach(b=>b.classList.toggle('active', b===btn));
+  });
+
+  const LEVEL_LABEL = { basic:'Cơ bản', advanced:'Nâng cao', thinking:'Tư duy' };
+  const QTYPE_LABEL = { mcq:'Trắc nghiệm', fill:'Điền khuyết', error:'Sửa lỗi sai', reorder:'Sắp xếp câu' };
+  const QTYPE_PLACEHOLDER = { fill:'Nhập đáp án…', error:'Gõ lại câu đã sửa đúng…', reorder:'Gõ câu đã sắp xếp đúng…' };
+
+  function topicTitle(id){
+    const t = currentTopics().find(x=>x.id===id);
+    return t ? t.title : id;
+  }
+
+  function renderQuiz(){
+    qlist.innerHTML = currentQuiz.map((q,i)=>{
+      const meta = `<div class="qmeta">
+          <span class="qnum">Câu ${i+1}</span>
+          <span class="lvl-tag ${q.level}">${LEVEL_LABEL[q.level]}</span>
+          <span class="qtype-tag ${q.qtype}">${QTYPE_LABEL[q.qtype]||q.qtype}</span>
+        </div>`;
+      if(q.qtype==='mcq'){
+        return `<div class="qrow" data-idx="${i}">${meta}
+          <div class="qprompt">${q.prompt}</div>
+          <div class="qoptions">${q.options.map((opt,oi)=>`
+            <label class="qopt" data-oi="${oi}"><input type="radio" name="q${i}" value="${oi}"><span>${opt}</span></label>`).join('')}
+          </div>
+          <div class="qexplain">${q.explain}</div></div>`;
+      }
+      return `<div class="qrow" data-idx="${i}">${meta}
+        <div class="qprompt">${q.prompt}</div>
+        <div class="qfill-row">
+          <input type="text" class="qfill-input" placeholder="${QTYPE_PLACEHOLDER[q.qtype]||'Nhập đáp án…'}" autocomplete="off">
+          <span class="qfill-verdict"></span>
+        </div>
+        <div class="qanswer-reveal">Đáp án đúng: <b>${q.answer}</b></div>
+        <div class="qexplain">${q.explain}</div></div>`;
+    }).join('');
+    scoreBar.style.display='none';
+    scoreBar.className='score-bar';
+  }
+
+  function startQuiz(){
+    if(selectedTopics.size===0) return;
+    currentQuiz = buildQuiz(Array.from(selectedTopics), quizCount);
+    exercisePlaceholder.style.display='none';
+    quizArea.style.display='block';
+    quizTitle.textContent = `${currentQuiz.length} câu luyện tập — Lớp ${currentGrade}`;
+    quizSubTitle.textContent = Array.from(selectedTopics).map(topicTitle).join(' + ');
+    renderQuiz();
+  }
+  startBtn.addEventListener('click', startQuiz);
+  reshuffleBtn.addEventListener('click', ()=>{
+    if(selectedTopics.size===0) return;
+    currentQuiz = buildQuiz(Array.from(selectedTopics), quizCount);
+    renderQuiz();
+  });
+
+  function checkAnswers(){
+    let correct=0, answered=0;
+    currentQuiz.forEach((q,i)=>{
+      const row = $(`.qrow[data-idx="${i}"]`, qlist);
+      row.classList.add('graded');
+      if(q.qtype==='mcq'){
+        const checked = row.querySelector('input[type=radio]:checked');
+        $$('.qopt', row).forEach((optEl,oi)=>{
+          optEl.classList.remove('opt-correct','opt-wrong');
+          if(oi===q.correct) optEl.classList.add('opt-correct');
+        });
+        if(checked){
+          answered++;
+          const oi=parseInt(checked.value,10);
+          if(oi===q.correct){ correct++; row.classList.add('correct'); }
+          else { row.classList.add('wrong'); $$('.qopt',row)[oi].classList.add('opt-wrong'); }
+        }
+      } else {
+        const input = $('.qfill-input', row);
+        const val = input.value;
+        input.disabled = true;
+        const verdict = $('.qfill-verdict', row);
+        if(val && val.trim()){
+          answered++;
+          if(isAnswerCorrect(val, q)){ correct++; row.classList.add('correct'); verdict.textContent='✓ Đúng'; }
+          else { row.classList.add('wrong'); verdict.textContent='✕ Sai'; }
+        } else {
+          row.classList.add('wrong'); verdict.textContent='— Bỏ trống';
+        }
+      }
+    });
+    const pct = Math.round((correct/currentQuiz.length)*100);
+    scoreBar.style.display='flex';
+    let cls='low', msg='Cố gắng ôn lại chủ điểm này thêm nhé! 💪';
+    if(pct>=80){ cls='good'; msg='Xuất sắc! Nắm rất chắc chủ điểm này 🎉'; }
+    else if(pct>=50){ cls='mid'; msg='Khá ổn, luyện thêm để chắc hơn nhé 👍'; }
+    scoreBar.className = 'score-bar '+cls;
+    const unanswered = currentQuiz.length - answered;
+    scoreBar.innerHTML = `<span>Kết quả: <b>${correct}/${currentQuiz.length}</b> (${pct}%)</span><span>${unanswered>0?unanswered+' câu chưa trả lời · ':''}${msg}</span>`;
+  }
+  checkBtn.addEventListener('click', checkAnswers);
+
+  function buildPlainText(){
+    const lines=[];
+    lines.push(`PHIẾU BÀI TẬP — NGỮ PHÁP TIẾNG ANH LỚP ${currentGrade}`);
+    lines.push('Dạng bài: Trắc nghiệm · Điền khuyết · Sửa lỗi sai · Sắp xếp câu');
+    lines.push('Chủ điểm: '+Array.from(selectedTopics).map(topicTitle).join(' + '));
+    lines.push('Số câu: '+currentQuiz.length);
+    lines.push('');
+    lines.push('--- ĐỀ BÀI ---');
+    currentQuiz.forEach((q,i)=>{
+      lines.push(`${i+1}. [${QTYPE_LABEL[q.qtype]||q.qtype}] ${q.prompt.replace(/<[^>]+>/g,'')}`);
+      if(q.qtype==='mcq') q.options.forEach((opt,oi)=>lines.push(`   ${String.fromCharCode(65+oi)}. ${opt}`));
+    });
+    lines.push('');
+    lines.push('--- ĐÁP ÁN ---');
+    currentQuiz.forEach((q,i)=>{
+      if(q.qtype==='mcq') lines.push(`${i+1}. ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}`);
+      else lines.push(`${i+1}. ${q.answer}`);
+    });
+    return lines.join('\n');
+  }
+
+  function flashBtn(btn, text){
+    const old=btn.textContent;
+    btn.textContent=text; btn.classList.add('copy-flash');
+    setTimeout(()=>{ btn.textContent=old; btn.classList.remove('copy-flash'); },1600);
+  }
+
+  copyBtn.addEventListener('click', async ()=>{
+    if(!currentQuiz.length) return;
+    try{ await navigator.clipboard.writeText(buildPlainText()); flashBtn(copyBtn,'✓ Đã copy!'); }
+    catch(e){ flashBtn(copyBtn,'✕ Lỗi copy'); }
+  });
+
+  function escapeHtml(str){ return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  exportWordBtn.addEventListener('click', ()=>{
+    if(!currentQuiz.length) return;
+    const dateStr=new Date().toLocaleDateString('vi-VN');
+    const topicNames=Array.from(selectedTopics).map(topicTitle).join(' + ');
+    const qRows=currentQuiz.map((q,i)=>{
+      const plain=q.prompt.replace(/<[^>]+>/g,'');
+      let html=`<p style="margin:0 0 4px;font-size:13pt;"><b>Câu ${i+1}</b> (${LEVEL_LABEL[q.level]} · ${QTYPE_LABEL[q.qtype]}): ${escapeHtml(plain)}</p>`;
+      if(q.qtype==='mcq') html+=q.options.map((opt,oi)=>`<div style="margin-left:18px;">${String.fromCharCode(65+oi)}. ${escapeHtml(opt)}</div>`).join('');
+      return html+'<div style="margin-bottom:12px;"></div>';
+    }).join('');
+    const aRows=currentQuiz.map((q,i)=>{
+      const ans=q.qtype==='mcq'?`${String.fromCharCode(65+q.correct)}. ${escapeHtml(q.options[q.correct])}`:escapeHtml(q.answer);
+      return `<p style="margin:0 0 6px;font-size:12pt;"><b>Câu ${i+1}:</b> ${ans}</p>`;
+    }).join('');
+    const html=`<html><head><meta charset="utf-8"><title>Phieu bai tap</title></head><body>
+      <h1>PHIẾU BÀI TẬP — NGỮ PHÁP TIẾNG ANH LỚP ${currentGrade}</h1>
+      <p>Chủ điểm: <b>${escapeHtml(topicNames)}</b><br>Số câu: ${currentQuiz.length} · Ngày: ${dateStr}<br>
+      Họ và tên: __________________ Lớp: ________</p>
+      <h2>I. ĐỀ BÀI</h2>${qRows}
+      <h2>II. ĐÁP ÁN</h2>${aRows}</body></html>`;
+    const blob=new Blob(['\ufeff',html],{type:'application/msword'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a');
+    a.href=url; a.download=`phieu-bai-tap-lop${currentGrade}-${currentQuiz.length}cau.doc`;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(()=>URL.revokeObjectURL(url),2000);
+    flashBtn(exportWordBtn,'✓ Đã tải!');
+  });
+
+  updateSelectedUI();
+})();
+</script>
+</body>
+</html>
